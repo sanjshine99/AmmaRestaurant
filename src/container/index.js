@@ -1,0 +1,28 @@
+import AboutUs from './AboutUs/AboutUs';
+import Chef from './Chef/Chef';
+import FindUs from './Findus/FindUs';
+import Footer from './Footer/Footer';
+import Gallery from './Gallery/Gallery';
+import Header from './Header/Header';
+import Intro from './Intro/Intro';
+import Laurels from './Laurels/Laurels';
+import SpecialMenu from './Menu/SpecialMenu';
+import MenuCategories from './MenuCategories/MenuCategories.jsx';
+import ReviewsSection from './ReviewsSection/ReviewsSection.jsx';
+import AboutSection from './AboutSection/AboutSection.jsx';
+import MapSection from "./MapSection/MapSection.jsx"
+export {
+  AboutUs,
+  Chef,
+  FindUs,
+  Footer,
+  Gallery,
+  Header,
+  Intro,
+  Laurels,
+  SpecialMenu,
+  MenuCategories,
+  ReviewsSection,
+  AboutSection,
+  MapSection
+};
