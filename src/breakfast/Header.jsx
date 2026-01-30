@@ -8,9 +8,9 @@ const RestaurantHero = () => {
   // Background Images from your PUBLIC folder
   // Replace the empty strings with your actual filenames (e.g., 'image2.png')
   const bgImages = [
-    '/SambarIdli.png',
-    '/vada.png',
-    '/Venn Pongal.png'
+    '/SambarIdli.jpeg',
+    '/vada.jpeg',
+    '/Venn Pongal.jpeg'
   ];
 
   return (
