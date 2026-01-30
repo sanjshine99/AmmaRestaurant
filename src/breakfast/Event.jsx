@@ -29,13 +29,15 @@ const Event = () => {
             </p>
 
             <div className="pt-4">
-              <Link
-                to="#breakfast-contact"
+              <a
+                href="breakfast#breakfast-contact"
                 className="inline-block border border-white/40 rounded-lg px-10 py-3 uppercase tracking-widest text-xs font-semibold 
-                hover:bg-[#86D276] hover:text-black transition-all duration-300"
+                hover:bg-[#86D276]  transition-all duration-300"
               >
-                Discover Breakfast
-              </Link>
+                <span className="hover:text-black hover:font-bold">
+                  Discover Breakfast
+                </span>
+              </a>
             </div>
           </div>
 

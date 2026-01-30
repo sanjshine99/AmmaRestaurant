@@ -38,11 +38,11 @@ const AboutSection = () => {
                         </motion.div>
 
                         <motion.div variants={revealVariants}>
-                            <button className="border border-white/40 px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-[#86D276] hover:text-black transition-all duration-300">
-                                <a href='breakfast#breakfast-contact' >
+                            <a href='breakfast#breakfast-contact' className='cursor-pointer'>
+                                <button className="border cursor-pointer border-white/40 px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-[#86D276] hover:text-black transition-all duration-300">
                                     Book a table
-                                </a>
-                            </button>
+                                </button>
+                            </a>
                         </motion.div>
                     </motion.div>
 
@@ -56,9 +56,9 @@ const AboutSection = () => {
                     >
                         <div className="aspect-4/3 overflow-hidden border border-white/5">
                             <img
-                                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80"
+                                src="/Onion Dosa.jpeg"
                                 alt="Chef detail"
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                className="w-full h-full object-cover transition-all duration-700"
                             />
                         </div>
                     </motion.div>
@@ -74,7 +74,7 @@ const AboutSection = () => {
                         className="w-full lg:w-[90%] aspect-3/4 overflow-hidden border border-white/5 shadow-2xl"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&q=80"
+                            src="/Gemini_Generated_Image_1os7141os7141os7.jpeg"
                             alt="Main Kitchen View"
                             className="w-full h-full object-cover"
                         />

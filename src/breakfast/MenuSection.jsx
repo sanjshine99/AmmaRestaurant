@@ -107,11 +107,11 @@ const MenuSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center">
-          <button className="bg-[#86D276] hover:bg-[#6eb35f] text-black text-2xl font-black py-5 px-12 rounded-full shadow-xl transition-transform hover:scale-110 active:scale-95 uppercase tracking-widest">
+        <a  href="breakfast#breakfast-contact" className="flex justify-center ">
+          <button className="bg-[#86D276] hover:bg-[#6eb35f] text-black text-2xl cursor-pointer font-black py-5 px-12 rounded-full shadow-xl transition-transform hover:scale-110 active:scale-95 uppercase tracking-widest">
             Book Now
           </button>
-        </div>
+        </a>
 
       </div>
     </section>

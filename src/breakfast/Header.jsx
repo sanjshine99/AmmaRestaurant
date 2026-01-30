@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // Added Link import
 
 const RestaurantHero = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Background Images from your PUBLIC folder
-  // Replace the empty strings with your actual filenames (e.g., 'image2.png')
   const bgImages = [
     '/SambarIdli.jpeg',
     '/vada.jpeg',
@@ -15,18 +14,17 @@ const RestaurantHero = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden font-sans bg-black">
-
       {/* 3-COLUMN ANIMATED BACKGROUND */}
       <div className="absolute inset-0 flex w-full h-full z-0">
         {bgImages.map((img, index) => (
           <div key={index} className="relative flex-1 overflow-hidden border-r border-white/5 last:border-r-0">
             <motion.div
-              initial={{ scale: 1.5, opacity: 0 }} // Start slightly larger for deeper zoom
+              initial={{ scale: 1.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{
-                duration: 2.5, // Slow cinematic zoom
+                duration: 2.5,
                 ease: [0.25, 0.1, 0.25, 1],
-                delay: index * 0.3 // Precise staggered entry
+                delay: index * 0.3
               }}
               className="absolute inset-0 w-full h-full"
               style={{
@@ -35,8 +33,7 @@ const RestaurantHero = () => {
                 backgroundPosition: 'center'
               }}
             />
-            {/* Dark overlay to match video contrast */}
-            <div className="absolute inset-0 bg-black/50 z-10"></div>
+            <div className="absolute inset-0 bg-black/50 z-10" />
           </div>
         ))}
       </div>
@@ -44,7 +41,6 @@ const RestaurantHero = () => {
       {/* Navigation */}
       <nav className="relative z-30 flex items-center justify-between px-6 py-8 md:px-12 lg:px-24">
         <div className="text-2xl font-black text-white tracking-tighter cursor-pointer uppercase">Logo</div>
-
         <ul className="hidden md:flex space-x-10 text-[11px] font-bold tracking-[0.3em] text-white uppercase">
           {['Story', 'Reservation', 'Gallery', 'Blogs', 'Contact Us'].map((item) => (
             <li key={item} className="cursor-pointer hover:opacity-50 transition-all duration-300">
@@ -52,7 +48,6 @@ const RestaurantHero = () => {
             </li>
           ))}
         </ul>
-
         <div className="md:hidden text-white cursor-pointer" onClick={() => setIsOpen(true)}>
           <Menu size={28} />
         </div>
@@ -83,11 +78,14 @@ const RestaurantHero = () => {
           transition={{ duration: 1, delay: 1.4 }}
           className="mt-12"
         >
-          <div className="bg-transparent text-white px-10 py-4 text-sm font-bold uppercase tracking-[0.2em] border border-white/40 hover:bg-[#86D276] hover:text-black transition-all duration-500">
-            <a href='breakfast#breakfast-contact' >
+          {/* UPDATED BUTTON: Link instead of anchor */}
+          <a
+            href="/breakfast#breakfast-contact"
+          >
+            <div className="inline-block bg-transparent text-white px-10 py-4 text-sm font-bold uppercase tracking-[0.2em] border border-white/40 hover:bg-[#86D276] hover:text-black transition-all duration-500">
               Book a table
-            </a>
-          </div>
+            </div>
+          </a>
         </motion.div>
       </div>
 
