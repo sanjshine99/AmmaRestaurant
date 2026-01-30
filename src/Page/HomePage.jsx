@@ -9,7 +9,7 @@ const Home = ({ onCategoryClick, selectedCategory }) => (
   <div>
 
     <Header />
-    <AboutUs />
+    {/* <AboutUs /> */}
     <AboutSection />
     <BreakfastHero />
     <MenuCategories onCategoryClick={onCategoryClick} />

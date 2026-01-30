@@ -2,11 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const categories = [
-  { title: "TIFFIN", image: "/Gemini_Generated_Image_1os7141os7141os7.png" },
-  { title: "SOUP", image: "/Gemini_Generated_Image_o0k353o0k353o0k3.png" },
-  { title: "WILD DELICACY", image: "/Gemini_Generated_Image_qhs71pqhs71pqhs7.png" },
-  { title: "NAAN", image: "/Gemini_Generated_Image_qbopg8qbopg8qbop.png" },
-  { title: "FRESH JUICE", image: "/Gemini_Generated_Image_use9d4use9d4use9.png" },
+  { title: "TIFFIN", image: "/Gemini_Generated_Image_1os7141os7141os7.jpeg" },
+  { title: "SOUP", image: "/Gemini_Generated_Image_o0k353o0k353o0k3.jpeg" },
+  { title: "WILD DELICACY", image: "/Gemini_Generated_Image_qhs71pqhs71pqhs7.jpeg" },
+  { title: "NAAN", image: "/Gemini_Generated_Image_qbopg8qbopg8qbop.jpeg" },
+  { title: "FRESH JUICE", image: "/Gemini_Generated_Image_use9d4use9d4use9.jpeg" },
 ];
 
 export default function MenuCategories({ onCategoryClick }) {

@@ -81,9 +81,3 @@ a {
   }
 }
 
-/* Make date & time icons black */
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="time"]::-webkit-calendar-picker-indicator {
-  filter: invert(0);
-  cursor: pointer;
-}

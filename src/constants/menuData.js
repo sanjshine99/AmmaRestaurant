@@ -10,59 +10,59 @@ const menuData = [
         "title": "Vada (2 pcs)",
         "price": "£2.29",
         "tags": "",
-        "image": "vada.png"
+        "image": "vada.jpeg"
       },
       {
         "title": "sambar vada (2 pcs)",
         "price": "£3.99",
         "tags": "",
-        "image": "sambarvada.png"
+        "image": "sambarvada.jpeg"
       },
       {
         "title": "Rasa vada (2 pcs)",
         "price": "£3.49",
         "tags": "",
-        "image": "rasavadai.png"
+        "image": "rasavadai.jpeg"
       },
       {
         "title": "Idli (2 pcs) with Vada",
         "price": "£4.49",
-        "tags": "", "image": "idlyvadai.png"
+        "tags": "", "image": "idlyvadai.jpeg"
       },
       {
         "title": "Sambar Idli (2 pcs)",
         "price": "£4.99",
-        "tags": "", "image": "SambarIdli.png"
+        "tags": "", "image": "SambarIdli.jpeg"
       },
       {
         "title": "Podi Idli",
         "price": "£5.99",
-        "tags": "", "image": "PodiIdli.png"
+        "tags": "", "image": "PodiIdli.jpeg"
       },
       {
         "title": "Mini Idli (Dipped sambar)",
         "price": "£5.5",
-        "tags": "", "image": "Mini Idli (Dipped sambar).png"
+        "tags": "", "image": "Mini Idli (Dipped sambar).jpeg"
       },
       {
         "title": "Poori (2 pcs) with Potato Masala",
         "price": "£5.49",
-        "tags": "", "image": "Poori (2 pcs) with Potato Masala.png"
+        "tags": "", "image": "Poori (2pcs) with Potato Masala.jpeg"
       },
       {
         "title": "Chapathi (2 pcs) with Kurma, Raitha",
         "price": "£3.99",
-        "tags": "", "image": "Chapathi (2 pcs) with Kurma, Raitha.png"
+        "tags": "", "image": "Chapathi (2pcs) with Kurma, Raitha.jpeg"
       },
       {
         "title": "Chola Poori (1 pc) with Channa Masala",
         "price": "£5.99",
-        "tags": "", "image": "Chola Poori (1 pc) with Channa Masala.png"
+        "tags": "", "image": "Chola Poori (1pc) with Channa Masala.jpeg"
       },
       {
         "title": "Venn Pongal",
         "price": "£4.99",
-        "tags": "", "image": "Venn Pongal.png"
+        "tags": "", "image": "Venn Pongal.jpeg"
       }
     ]
   },
@@ -73,61 +73,61 @@ const menuData = [
         "title": "Plain Dosa",
         "price": "£5.99",
         "tags": "",
-        "image": "Plain Dosa.png"
+        "image": "Plain Dosa.jpeg"
       },
       {
         "title": "Masala Dosa",
         "price": "£6.99",
         "tags": "",
-        "image": "Masala Dosa.png"
+        "image": "Masala Dosa.jpeg"
       },
       {
         "title": "Paneer Dosa",
         "price": "£6.99",
         "tags": "",
-        "image": "Paneer Dosa.png"
+        "image": "Paneer Dosa.jpeg"
       },
       {
         "title": "Paneer Masala Dosa",
         "price": "£7.29",
         "tags": "",
-        "image": "Paneer Masala Dosa.png"
+        "image": "Paneer Masala Dosa.jpeg"
       },
       {
         "title": "Podi Dosa",
         "price": "£6.49",
         "tags": "",
-        "image": "Podi Dosa.png"
+        "image": "Podi Dosa.jpeg"
       },
       {
         "title": "Kal Dosa (2 pcs)",
         "price": "£6.49",
         "tags": "",
-        "image": "Kal Dosa (2 pcs).png"
+        "image": "Kal Dosa (2pc).jpeg"
       },
       {
         "title": "Chilli coriander Dosa",
         "price": "£6.49",
         "tags": "",
-        "image": "Chilli coriander Dosa.png"
+        "image": "Chilli coriander Dosa.jpeg"
       },
       {
         "title": "Onion Dosa",
         "price": "£6.49",
         "tags": "",
-        "image": "Onion Dosa.png"
+        "image": "Onion Dosa.jpeg"
       },
       {
         "title": "Cheese Dosa",
         "price": "£6.99",
         "tags": "",
-        "image": "Cheese Dosa.png"
+        "image": "Cheese Dosa.jpeg"
       },
       {
         "title": "Hot Chutney Masala Dosa",
         "price": "£6.99",
         "tags": "",
-        "image": "Hot Chutney Masala Dosa.png"
+        "image": "Hot Chutney Masala Dosa.jpeg"
       },
       {
         "title": "Paper Roast",

@@ -1,61 +1,68 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Event = () => {
   return (
-    <section className="bg-white dark:bg-black text-black dark:text-white min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20 transition-colors duration-500">
-      <div className="absolute inset-0 pointer-events-none bg-linear-to-r from-[#007A4D]/10 via-transparent to-[#FFB612]/10 " />
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="relative bg-black text-white min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20">
+      {/* Soft gradient overlay */}
+      <div className="absolute inset-0 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-          {/* Left Content: Text and CTA */}
+          {/* Left Content */}
           <div className="lg:col-span-5 space-y-8 text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide uppercase">
               Weekend & Bank Holiday <br className="hidden lg:block" />
-              <span className='text-[#86D276]'>Unlimited</span> <br className="hidden lg:block" />
-              BreakFast
+              <span className="text-[#86D276]">Unlimited</span>{" "}
+              <br className="hidden lg:block" />
+              Breakfast
             </h1>
 
-            <p className="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-relaxed max-w-lg mx-auto lg:mx-0">
-              At Amma Kitchen we love South Indian Cuisine. We love to treat our customers with an exquisite dining experience, with speedy preparation and cooking, so you do not have to sit and wait for your food. Create an order easily and quickly via our website or make it even easier for yourself by downloading our free app via the App Store or Google Play. Then at the tap of a button you can send an order to us immediately.
+            <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-lg mx-auto lg:mx-0">
+              At Amma Kitchen we love South Indian Cuisine. We love to treat our
+              customers with an exquisite dining experience, with speedy
+              preparation and cooking, so you do not have to sit and wait for
+              your food. Create an order easily and quickly via our website or
+              make it even easier by downloading our free app via the App Store
+              or Google Play.
             </p>
+
             <div className="pt-4">
               <Link
                 to="#breakfast-contact"
-                className="border border-black/40 rounded-lg dark:border-white/40 px-10 py-3 uppercase tracking-widest text-xs font-semibold 
-     hover:text-white hover:bg-[#86D276] dark:hover:text-[#050c18] transition-all duration-300"
+                className="inline-block border border-white/40 rounded-lg px-10 py-3 uppercase tracking-widest text-xs font-semibold 
+                hover:bg-[#86D276] hover:text-black transition-all duration-300"
               >
-                Discover BreakFast
+                Discover Breakfast
               </Link>
             </div>
           </div>
 
-          {/* Right Content: Image Grid */}
+          {/* Right Content: Images */}
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
 
-            {/* Main Center Image (B&W Style) */}
+            {/* Main Image */}
             <div className="aspect-4/5 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800"
-                alt="Bartender preparing drink"
+                alt="Food preparation"
                 loading="lazy"
-                className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 hover:grayscale-0"
+                className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 hover:grayscale-0 hover:brightness-100"
               />
             </div>
 
-            {/* Side Image (Partially cut off/Offset like original) */}
+            {/* Side Image */}
             <div className="hidden md:block aspect-4/5 overflow-hidden translate-y-12 lg:translate-y-20">
               <img
                 src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800"
-                alt="Finished cocktails"
+                alt="Breakfast dishes"
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
 
-
           </div>
-
         </div>
       </div>
     </section>
