@@ -71,7 +71,7 @@ const MenuSection = () => {
   return (
     <section
       id="menu"
-      className="bg-black text-white scroll-m-20 min-h-screen py-12 px-6"
+      className="bg-black text-white scroll-m-20 min-h-screen py-12 px-6 font-base"
     >
       <div className="max-w-6xl mx-auto">
 

@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/95 text-white border-b border-gray-900">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/95 text-white border-b border-gray-900 font-base">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
         {/* Logo */}

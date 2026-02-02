@@ -6,7 +6,7 @@ export default function FindUs() {
   const brandGreen = "#86D276";
 
   return (
-    <section id="contact" className="relative scroll-m-10 bg-black bg-[url('/bg.png')] bg-cover bg-fixed py-16 px-6 md:px-12 lg:px-24">
+    <section id="contact" className="relative scroll-m-10 bg-black bg-[url('/bg.png')] bg-cover bg-fixed py-16 px-6 md:px-12 lg:px-24 font-base">
       {/* Dark Overlay for readability */}
       <div className="absolute inset-0 bg-black/60 z-0" />
 
@@ -18,7 +18,7 @@ export default function FindUs() {
             <div className="flex flex-col items-center xl:items-start">
               <SubHeading title="Contact" />
               <h1
-                className="text-4xl md:text-5xl lg:text-7xl font-serif mt-4 mb-8"
+                className="text-4xl md:text-5xl lg:text-7xl font-base mt-4 mb-8"
                 style={{ color: brandGreen }}
               >
                 Find Us

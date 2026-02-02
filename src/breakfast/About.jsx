@@ -14,7 +14,7 @@ const AboutSection = () => {
     };
 
     return (
-        <section className="bg-black text-white min-h-screen py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
+        <section className="bg-black text-white min-h-screen py-24 px-6 md:px-12 lg:px-24 overflow-hidden font-base">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
                 {/* LEFT COLUMN - Text & Smaller Image (Occupies 5 columns) */}

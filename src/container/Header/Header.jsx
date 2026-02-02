@@ -7,7 +7,7 @@ export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
+    <section className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center font-base">
 
       {/* VIDEO BACKGROUND */}
       <video

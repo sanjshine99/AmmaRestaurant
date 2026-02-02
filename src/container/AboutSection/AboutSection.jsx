@@ -29,7 +29,7 @@ const ScrollSection = ({ title, text, imageUrl, isReverse, index, highlightWords
       }}
     >
       <div
-        className={`flex flex-col lg:flex-row w-full max-w-[1600px] h-full items-center gap-6 lg:gap-12 px-6 py-12 lg:px-12 lg:py-0 ${
+        className={`flex flex-col lg:flex-row w-full font-base max-w-[1600px] h-full items-center gap-6 lg:gap-12 px-6 py-12 lg:px-12 lg:py-0 ${
           isReverse ? "lg:flex-row-reverse" : ""
         }`}
       >

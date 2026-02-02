@@ -65,7 +65,7 @@ export default function Chef() {
         <SubHeading title={slide.sub} />
 
         <h1 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mt-4 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-base mt-4 leading-tight"
           style={{ color: brandGreen }}
         >
           {slide.title}
@@ -92,7 +92,7 @@ export default function Chef() {
         {/* SIGNATURE SECTION */}
         <div className="flex flex-col mt-10 md:mt-14 w-full">
           <p 
-            className="text-3xl sm:text-4xl md:text-5xl font-serif"
+            className="text-3xl sm:text-4xl md:text-5xl font-base"
             style={{ 
               color: brandGreen,
               fontFamily: "'Cormorant Upright', serif", // Or any cursive/script font you have

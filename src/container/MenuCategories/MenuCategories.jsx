@@ -29,7 +29,7 @@ export default function MenuCategories({ onCategoryClick }) {
   };
 
   return (
-    <section className="bg-black py-24 overflow-hidden">
+    <section className="bg-black py-24 overflow-hidden font-base">
       <div className="mx-auto max-w-[1600px] px-8">
         
         {/* SECTION TITLE */}
@@ -117,11 +117,7 @@ export default function MenuCategories({ onCategoryClick }) {
         </div>
       </div>
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600;700&display=swap');
-        .font-base { font-family: 'Cormorant Upright', serif; }
-        .incline-text { transform: skewX(-10deg); display: inline-block; }
-      `}</style>
+     
     </section>
   );
 }
