@@ -5,7 +5,7 @@ const ScrollMenu = () => {
   const cocktailsBottom = ["Pongal", "Vadai", "Upma", "Masala tea"];
 
   return (
-    <section className="bg-black py-12 overflow-hidden">
+    <section className="bg-black py-12 overflow-hidden font-base">
       <div className="flex flex-col">
 
         {/* Top Row - Moving Left */}
