@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const ScrollSection = ({ title, text, imageUrl, isReverse, index }) => {
+const ScrollSection = ({ title, text, imageUrl, isReverse, index, highlightWords = [] }) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -62,16 +62,15 @@ const ScrollSection = ({ title, text, imageUrl, isReverse, index }) => {
             opacity: typeof window !== 'undefined' && window.innerWidth >= 1024 ? opacity : 1
           }}
         >
-          <h2 className="font-bold uppercase leading-[0.9] mb-4 lg:mb-8 tracking-tight text-[36px] md:text-[56px] lg:text-[80px]"
-            style={{ 
-              background: 'linear-gradient(135deg, #ffffff 0%, #86D276 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}
-          >
+          <h2 className="font-bold uppercase leading-[0.9] mb-4 lg:mb-8 tracking-tight text-[36px] md:text-[56px] lg:text-[80px]">
             {title.split(" ").map((word, i) => (
-              <span key={i} className="block">
+              <span 
+                key={i} 
+                className="block"
+                style={{ 
+                  color: highlightWords.includes(word) ? '#86D276' : '#ffffff'
+                }}
+              >
                 {word}
               </span>
             ))}
@@ -91,25 +90,29 @@ const sections = [
     title: "About Us",
     text: "At Amma Kitchen we love South Indian Cuisine. We love to treat our customers with an exquisite dining experience, with speedy preparation and cooking, so you do not have to sit and wait for your food. Create an order easily and quickly via our website or make it even easier for yourself by downloading our free app via the App Store or Google Play. Then at the tap of a button you can send an order to us immediately.",
     imageUrl: "https://cdn.prod.website-files.com/6410dee2412dc599c7e61e0b/6423379bb18b6ca4aa4d4722_about1.jpg",
-    isReverse: false
+    isReverse: false,
+    highlightWords: ["Us"]
   },
   {
     title: "Who We Are",
     text: "Amma Kitchen Coventry is a passionate South Indian restaurant dedicated to bringing authentic, home-style flavours to the heart of Coventry..",
     imageUrl: "https://cdn.prod.website-files.com/6410dee2412dc599c7e61e0b/6423379ff8be2448d15a6448_about2.jpg",
-    isReverse: true
+    isReverse: true,
+    highlightWords: ["Are"]
   },
   {
     title: "What We Do",
     text: "We prepare a wide variety of freshly cooked South Indian dishes and make ordering easy through our restaurant, website, and mobile app for quick pickup and enjoyment.",
     imageUrl: "https://cdn.prod.website-files.com/6410dee2412dc599c7e61e0b/6423379bb18b6ca4aa4d4722_about1.jpg",
-    isReverse: false
+    isReverse: false,
+    highlightWords: ["Do"]
   },
   {
     title: "Restaurant Location",
     text: "When you have decided what you want to eat, you will find us at the address 477 Beake Ave, Coventry CV6 2HT, United Kingdom. We always look forward to seeing you in the restaurant when you pick up your food! Should you one day be in doubt about our address or our opening hours, remember that all information can be found in our app. The app can be downloaded from the App Store and Google Play, and ensures that you are never more than a few clicks away from our delicious food. We hope to see you soon!.",
     imageUrl: "https://cdn.prod.website-files.com/6410dee2412dc599c7e61e0b/6423379ff8be2448d15a6448_about2.jpg",
-    isReverse: true
+    isReverse: true,
+    highlightWords: ["Location"]
   }
 ];
 
