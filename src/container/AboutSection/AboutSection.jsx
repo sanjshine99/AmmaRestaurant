@@ -75,7 +75,7 @@ const ScrollSection = ({ title, text, imageUrl, isReverse, index, highlightWords
               </span>
             ))}
           </h2>
-          <p className="text-white/80 text-base md:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 font-light leading-relaxed tracking-wide">
+          <p className="text-white/80 text-base md:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 font-base leading-relaxed tracking-wide">
             {text}
           </p>
         </motion.div>
