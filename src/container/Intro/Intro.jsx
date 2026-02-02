@@ -17,7 +17,7 @@ const Intro = () => {
   };
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative h-screen w-full font-base">
       <video
         ref={vidRef}
         src="amma_kitchen.mp4"

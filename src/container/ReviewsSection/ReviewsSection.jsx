@@ -32,7 +32,7 @@ export default function ReviewsSection() {
   return (
     <section 
       ref={containerRef} 
-      className="relative bg-[#0a0a0a] text-white py-24 sm:py-32 overflow-hidden"
+      className="relative bg-[#0a0a0a] text-white py-24 sm:py-32 overflow-hidden font-base"
     >
       {/* ===== BACKGROUND IMAGE LAYER ===== */}
       <div 

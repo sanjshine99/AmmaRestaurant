@@ -6,7 +6,7 @@ import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 export default function Footer() {
   return (
     <footer
-      className="relative w-full bg-black text-white"
+      className="relative w-full bg-black text-white font-base"
     >
       {/* Background Image */}
       <div
@@ -21,7 +21,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-2xl font-serif mb-4">Contact Us</h3>
+            <h3 className="text-2xl  mb-4">Contact Us</h3>
 
             {/* Address */}
             <a
@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* Opening Hours */}
           <div>
-            <h3 className="text-2xl font-serif mb-4">Opening Hours</h3>
+            <h3 className="text-2xl  mb-4">Opening Hours</h3>
             <p className="text-sm font-semibold opacity-90">Mon – Fri</p>
             <p className="mb-3 text-sm opacity-90">
               12:00 PM – 10:30 PM

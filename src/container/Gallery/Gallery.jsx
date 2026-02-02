@@ -21,7 +21,7 @@ export default function Gallery() {
   };
 
   return (
-    <section className="flex flex-col xl:flex-row bg-black px-6 lg:px-24 py-16 overflow-hidden">
+    <section className="flex flex-col xl:flex-row bg-black px-6 lg:px-24 py-16 overflow-hidden font-base">
       
       {/* LEFT CONTENT */}
       <div className="flex-1 flex flex-col justify-center items-start lg:pr-12 text-white">
@@ -51,7 +51,7 @@ export default function Gallery() {
 
         {/* TITLE */}
         <h1
-          className="text-4xl md:text-5xl lg:text-6xl font-serif mt-2"
+          className="text-4xl md:text-5xl lg:text-6xl  mt-2"
           style={{ color: brandGreen }}
         >
           Gallery
