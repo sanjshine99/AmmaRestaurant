@@ -38,20 +38,7 @@ const RestaurantHero = () => {
         ))}
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-30 flex items-center justify-between px-6 py-8 md:px-12 lg:px-24">
-        <div className="text-2xl font-black text-white tracking-tighter cursor-pointer uppercase">Logo</div>
-        <ul className="hidden md:flex space-x-10 text-[11px] font-bold tracking-[0.3em] text-white uppercase">
-          {['Story', 'Reservation', 'Gallery', 'Blogs', 'Contact Us'].map((item) => (
-            <li key={item} className="cursor-pointer hover:opacity-50 transition-all duration-300">
-              {item}
-            </li>
-          ))}
-        </ul>
-        <div className="md:hidden text-white cursor-pointer" onClick={() => setIsOpen(true)}>
-          <Menu size={28} />
-        </div>
-      </nav>
+     
 
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 min-h-[80vh]">

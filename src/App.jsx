@@ -9,6 +9,7 @@ import Term from "./Page/Term";
 import { Navbar } from "./components";
 import { Footer } from "./container";
 import "./app.css";
+import "./index.css";
 import GDPRBanner from "./container/GDPRBanner";
 import BreakFastPage from "./Page/BreakFastPage";
 import ScrollToHash from "./components/ScrollToHash";
