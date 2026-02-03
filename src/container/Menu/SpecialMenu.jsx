@@ -21,14 +21,7 @@ export default function SpecialMenu({ selectedCategory }) {
   }, [selectedCategory]);
 
   // Scroll active button into view on mobile
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      const activeButton = scrollContainerRef.current.querySelector('.active-category');
-      if (activeButton) {
-        activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }
-    }
-  }, [activeCategory]);
+ 
 
   const activeData = menuData.find(
     (item) => item.category === activeCategory
