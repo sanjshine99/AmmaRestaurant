@@ -10,12 +10,12 @@ const Home = ({ onCategoryClick, selectedCategory }) => (
   <div>
 
     <Header />
-    <MenuCard />
    
     <AboutSection />
     <BreakfastHero />
     <MenuCategories onCategoryClick={onCategoryClick} />
-    <SpecialMenu selectedCategory={selectedCategory} />
+    <MenuCard />
+    {/* <SpecialMenu selectedCategory={selectedCategory} /> */}
     <ReviewsSection />
     <Chef />
     <Intro />
