@@ -10,7 +10,6 @@ const Home = ({ onCategoryClick, selectedCategory }) => (
   <div>
 
     <Header />
-   
     <AboutSection />
     <BreakfastHero />
     <MenuCategories onCategoryClick={onCategoryClick} />
