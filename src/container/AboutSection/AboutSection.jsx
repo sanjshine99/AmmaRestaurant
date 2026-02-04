@@ -20,7 +20,7 @@ const ScrollSection = ({ title, text, imageUrl, isReverse, index, highlightWords
   return (
     <section
       ref={containerRef}
-      className={`lg:sticky lg:top-0 h-auto lg:h-screen w-full bg-black flex items-center justify-center overflow-hidden border-[3px] ${
+      className={`lg:sticky lg:top-0 h-auto lg:h-screen w-full scroll-m-20 bg-black flex items-center justify-center overflow-hidden border-[3px] ${
         index > 0 ? "lg:rounded-t-[100px]" : ""
       }`}
       style={{ 

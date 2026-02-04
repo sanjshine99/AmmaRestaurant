@@ -504,6 +504,56 @@ const menuData = [
         "title": "Amma Mix Veg Devil",
         "price": "£9.99",
         "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Paneer Butter Masala",
+        "price": "£9.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Paneer Tikka Masala",
+        "price": "£10.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Kadai Mushroom",
+        "price": "£9.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Mix Veg Kadai",
+        "price": "£9.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Daal Curry",
+        "price": "£6.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Thadukka Daal",
+        "price": "£7.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Channa Masala",
+        "price": "£6.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Chettinad Ennai Kathirikai",
+        "price": "£8.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Soya Chunks Curry",
+        "price": "£6.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Sambar",
+        "price": "£5.99",
+        "tags": "", "image": DEFAULT_IMAGE
       }
     ]
   },
@@ -563,61 +613,6 @@ const menuData = [
       {
         "title": "Village Style Meen Kulambu (Kingfish/ Nethili)",
         "price": "£11.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      }
-    ]
-  },
-  {
-    "category": "Veg Starters",
-    "items": [
-      {
-        "title": "Paneer Butter Masala",
-        "price": "£9.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Paneer Tikka Masala",
-        "price": "£10.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Kadai Mushroom",
-        "price": "£9.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Mix Veg Kadai",
-        "price": "£9.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Daal Curry",
-        "price": "£6.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Thadukka Daal",
-        "price": "£7.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Channa Masala",
-        "price": "£6.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Chettinad Ennai Kathirikai",
-        "price": "£8.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Soya Chunks Curry",
-        "price": "£6.99",
-        "tags": "", "image": DEFAULT_IMAGE
-      },
-      {
-        "title": "Sambar",
-        "price": "£5.99",
         "tags": "", "image": DEFAULT_IMAGE
       }
     ]
