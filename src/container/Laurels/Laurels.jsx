@@ -69,10 +69,10 @@ export default function SignatureDishes() {
         <div className="flex-1 flex justify-center mt-16 lg:mt-0 relative">
           <div className="relative max-w-md">
             <img
-              src="/Paneer Dosa.png" // Replace with your dish image path
+              src="/Paneer Dosa.jpeg" // Replace with your dish image path
               alt="signature dishes"
                loading="lazy"
-              className="w-full h-auto object-cover border-[#86D276]/20"
+              className="w-full h-auto object-cover rounded-xl border-[#86D276]/20"
               
             />
          

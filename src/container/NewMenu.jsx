@@ -9,6 +9,7 @@ const MenuSection = () => {
     const [isInMenuSection, setIsInMenuSection] = useState(true);
     const sectionRefs = useRef({});
     const menuSectionRef = useRef(null);
+    const menuContentRef = useRef(null);
     const navBarRef = useRef(null);
     const categoryScrollRef = useRef(null);
 
@@ -41,6 +42,40 @@ const MenuSection = () => {
         }
     }, []);
 
+    // Handle scroll within the menu content area
+    useEffect(() => {
+        const handleMenuScroll = () => {
+            if (!menuContentRef.current) return;
+
+            const scrollTop = menuContentRef.current.scrollTop;
+
+            // Find which section we're currently in based on menu content scroll
+            let currentSection = menuData[0].category;
+
+            menuData.forEach((section) => {
+                const element = sectionRefs.current[section.category];
+                if (element) {
+                    const elementTop = element.offsetTop;
+                    const threshold = 200;
+                    
+                    if (scrollTop >= elementTop - threshold) {
+                        currentSection = section.category;
+                    }
+                }
+            });
+
+            setActiveSection(currentSection);
+        };
+
+        const menuContent = menuContentRef.current;
+        if (menuContent) {
+            menuContent.addEventListener('scroll', handleMenuScroll);
+            handleMenuScroll(); // Initial check
+            return () => menuContent.removeEventListener('scroll', handleMenuScroll);
+        }
+    }, []);
+
+    // Handle main window scroll for sticky behavior and section detection
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
@@ -52,7 +87,6 @@ const MenuSection = () => {
                 const menuHeight = menuSectionRef.current.offsetHeight;
                 const menuBottom = menuTop + menuHeight;
                 
-                // User is in menu section if scroll position is between top and bottom of menu
                 const inMenu = scrollY >= menuTop && scrollY < menuBottom - 100;
                 setIsInMenuSection(inMenu);
             }
@@ -62,25 +96,6 @@ const MenuSection = () => {
                 const navBarTop = menuSectionRef.current.offsetTop;
                 setIsSticky(scrollY >= navBarTop - 10);
             }
-
-            // Find which section we're currently in
-            let currentSection = menuData[0].category;
-
-            menuData.forEach((section) => {
-                const element = sectionRefs.current[section.category];
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    const elementTop = rect.top + scrollY;
-
-                    // Adjusted threshold for better section detection
-                    const threshold = window.innerWidth < 1024 ? 180 : 200;
-                    if (scrollY >= elementTop - threshold) {
-                        currentSection = section.category;
-                    }
-                }
-            });
-
-            setActiveSection(currentSection);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -91,38 +106,38 @@ const MenuSection = () => {
 
     const scrollToSection = (category) => {
         const element = sectionRefs.current[category];
-        if (element) {
-            // Dynamic offset based on screen size and sticky state
+        if (element && menuContentRef.current) {
             const isMobile = window.innerWidth < 640;
             const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
             
             let offset;
             if (isMobile) {
-                offset = isSticky ? 160 : 140;
+                offset = 160;
             } else if (isTablet) {
-                offset = isSticky ? 160 : 140;
+                offset = 160;
             } else {
                 offset = 140;
             }
             
-            const y = element.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top: y, behavior: "smooth" });
+            const elementTop = element.offsetTop;
+            const targetScrollTop = elementTop - offset;
+            
+            menuContentRef.current.scrollTo({ 
+                top: targetScrollTop, 
+                behavior: "smooth" 
+            });
         }
     };
 
     return (
-        <div id="menu" className="min-h-screen scroll-m-10 bg-[#0a0a0a] text-gray-300">
+        <div id="menu" className="h-screen overflow-hidden bg-[#0a0a0a] text-gray-300">
             {/* Menu Section Container */}
-            <div ref={menuSectionRef} className="pt-4 sm:pt-6 lg:pt-8">
-                {/* MOBILE & TABLET CATEGORY NAV - Only show when in menu section */}
+            <div ref={menuSectionRef} className="h-full flex flex-col">
+                {/* MOBILE & TABLET CATEGORY NAV */}
                 {isInMenuSection && (
                     <div 
                         ref={navBarRef}
-                        className={`lg:hidden transition-all duration-300 ${
-                            isSticky 
-                                ? 'fixed top-0 shadow-lg shadow-black/50' 
-                                : 'relative'
-                        } left-0 right-0 bg-[#0a0a0a]/98 backdrop-blur-md border-b border-gray-800 z-50`}
+                        className="lg:hidden bg-[#0a0a0a]/98 backdrop-blur-md border-b border-gray-800 z-50 shrink-0"
                     >
                         <div className="px-3 sm:px-4 py-3 sm:py-4">
                             {/* Horizontal scroll with arrows for mobile */}
@@ -210,98 +225,96 @@ const MenuSection = () => {
                     </div>
                 )}
 
-                {/* MENU LAYOUT */}
-                <main className={`transition-all duration-300 ${isSticky && isInMenuSection ? 'pt-20 sm:pt-24 lg:pt-4' : 'pt-4'}`}>
-                    <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 flex gap-6 lg:gap-12">
-                        {/* STICKY SIDEBAR - Desktop Only */}
-                        <aside className="hidden lg:block w-56 xl:w-64 sticky top-28 h-fit">
-                            <nav className="space-y-2">
-                                {menuData.map((section) => (
-                                    <button
-                                        key={section.category}
-                                        onClick={() => scrollToSection(section.category)}
-                                        className={`w-full text-left px-4 xl:px-5 py-3 rounded-lg border transition-all duration-200 text-sm xl:text-base ${
-                                            activeSection === section.category
-                                                ? "bg-linear-to-r from-gray-800/80 to-gray-700/60 border-gray-600 text-white shadow-lg transform scale-105"
-                                                : "border-gray-800 hover:border-gray-600 hover:bg-gray-900/50"
-                                        }`}
-                                    >
-                                        {section.category}
-                                    </button>
-                                ))}
-                            </nav>
-                        </aside>
-
-                        {/* MENU CONTENT */}
-                        <div className="flex-1 min-w-0">
-                            {menuData.map((section) => (
-                                <section
-                                    key={section.category}
-                                    id={section.category}
-                                    ref={(el) => (sectionRefs.current[section.category] = el)}
-                                    className="mb-16 sm:mb-20 lg:mb-28"
-                                >
-                                    {/* CATEGORY HEADER */}
-                                    <div 
-                                        className={`sticky bg-[#0a0a0a]/98 backdrop-blur-md py-4 sm:py-5 lg:py-6 border-b border-gray-800 z-30 transition-all duration-300 ${
-                                            isSticky && isInMenuSection ? '-mx-3 sm:-mx-4 lg:mx-0 px-3 sm:px-4 lg:px-0' : ''
-                                        }`}
-                                        style={{ 
-                                            top: (isSticky && isInMenuSection)
-                                                ? (window.innerWidth < 640 ? '90px' : window.innerWidth < 1024 ? '90px' : '0') 
-                                                : '0' 
-                                        }}
-                                    >
-                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white tracking-wide font-light">
+                {/* SCROLLABLE MENU CONTENT */}
+                <div 
+                    ref={menuContentRef}
+                    className="flex-1 overflow-y-auto scrollbar-custom"
+                >
+                    <main className="pt-4 sm:pt-6 lg:pt-8">
+                        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 flex gap-6 lg:gap-12">
+                            {/* STICKY SIDEBAR - Desktop Only */}
+                            <aside className="hidden lg:block w-56 xl:w-64 sticky top-4 h-fit">
+                                <nav className="space-y-2">
+                                    {menuData.map((section) => (
+                                        <button
+                                            key={section.category}
+                                            onClick={() => scrollToSection(section.category)}
+                                            className={`w-full text-left px-4 xl:px-5 py-3 rounded-lg border transition-all duration-200 text-sm xl:text-base ${
+                                                activeSection === section.category
+                                                    ? "bg-linear-to-r from-gray-800/80 to-gray-700/60 border-gray-600 text-white shadow-lg transform scale-105"
+                                                    : "border-gray-800 hover:border-gray-600 hover:bg-gray-900/50"
+                                            }`}
+                                        >
                                             {section.category}
-                                        </h2>
-                                    </div>
+                                        </button>
+                                    ))}
+                                </nav>
+                            </aside>
 
-                                    {/* ITEMS */}
-                                    <div className="space-y-6 sm:space-y-8 lg:space-y-10 mt-6 sm:mt-8 lg:mt-10">
-                                        {section.items.map((item, index) => (
-                                            <div
-                                                key={index}
-                                                className="group flex gap-3 sm:gap-4 lg:gap-6 border-b border-gray-800/50 pb-6 sm:pb-7 lg:pb-8 hover:border-gray-700/50 transition-all duration-300"
-                                            >
-                                                {/* Image */}
-                                                <div className="shrink-0">
-                                                    <img
-                                                        src={
-                                                            typeof item.image === "string"
-                                                                ? `/${item.image}`
-                                                                : item.image
-                                                        }
-                                                        alt={item.title}
-                                                        className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
-                                                    />
-                                                </div>
+                            {/* MENU CONTENT */}
+                            <div className="flex-1 min-w-0 pb-8">
+                                {menuData.map((section) => (
+                                    <section
+                                        key={section.category}
+                                        id={section.category}
+                                        ref={(el) => (sectionRefs.current[section.category] = el)}
+                                        className="mb-16 sm:mb-20 lg:mb-28"
+                                    >
+                                        {/* CATEGORY HEADER */}
+                                        <div 
+                                            className="sticky top-0 bg-[#0a0a0a]/98 backdrop-blur-md py-4 sm:py-5 lg:py-6 border-b border-gray-800 z-30 -mx-3 sm:-mx-4 lg:mx-0 px-3 sm:px-4 lg:px-0"
+                                        >
+                                            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white tracking-wide font-light">
+                                                {section.category}
+                                            </h2>
+                                        </div>
 
-                                                {/* Content */}
-                                                <div className="flex-1 min-w-0">
-                                                    <div className="flex justify-between items-start gap-2 mb-1 sm:mb-2">
-                                                        <h3 className="text-base sm:text-lg lg:text-xl text-white font-medium group-hover:text-gray-100 transition-colors duration-200 pr-2">
-                                                            {item.title}
-                                                        </h3>
-                                                        <span className="text-base sm:text-lg lg:text-xl text-white font-semibold whitespace-nowrap shrink-0">
-                                                            {item.price}
-                                                        </span>
+                                        {/* ITEMS */}
+                                        <div className="space-y-6 sm:space-y-8 lg:space-y-10 mt-6 sm:mt-8 lg:mt-10">
+                                            {section.items.map((item, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="group flex gap-3 sm:gap-4 lg:gap-6 border-b border-gray-800/50 pb-6 sm:pb-7 lg:pb-8 hover:border-gray-700/50 transition-all duration-300"
+                                                >
+                                                    {/* Image */}
+                                                    <div className="shrink-0">
+                                                        <img
+                                                            src={
+                                                                typeof item.image === "string"
+                                                                    ? `/${item.image}`
+                                                                    : item.image
+                                                            }
+                                                            alt={item.title}
+                                                            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
+                                                        />
                                                     </div>
 
-                                                    {item.tags && (
-                                                        <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1">
-                                                            {item.tags}
-                                                        </p>
-                                                    )}
+                                                    {/* Content */}
+                                                    <div className="flex-1 min-w-0">
+                                                        <div className="flex justify-between items-start gap-2 mb-1 sm:mb-2">
+                                                            <h3 className="text-base sm:text-lg lg:text-xl text-white font-medium group-hover:text-gray-100 transition-colors duration-200 pr-2">
+                                                                {item.title}
+                                                            </h3>
+                                                            <span className="text-base sm:text-lg lg:text-xl text-white font-semibold whitespace-nowrap shrink-0">
+                                                                {item.price}
+                                                            </span>
+                                                        </div>
+
+                                                        {item.tags && (
+                                                            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1">
+                                                                {item.tags}
+                                                            </p>
+                                                        )}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
-                            ))}
+                                            ))}
+                                        </div>
+                                    </section>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                </main>
+                    </main>
+                </div>
             </div>
 
             <style jsx>{`
@@ -312,13 +325,26 @@ const MenuSection = () => {
                     -ms-overflow-style: none;
                     scrollbar-width: none;
                 }
-                html {
-                    scroll-behavior: smooth;
+                
+                /* Custom scrollbar for menu content */
+                .scrollbar-custom::-webkit-scrollbar {
+                    width: 8px;
                 }
-                @media (max-width: 1023px) {
-                    html {
-                        scroll-padding-top: 120px;
-                    }
+                .scrollbar-custom::-webkit-scrollbar-track {
+                    background: rgba(17, 24, 39, 0.5);
+                }
+                .scrollbar-custom::-webkit-scrollbar-thumb {
+                    background: rgba(75, 85, 99, 0.5);
+                    border-radius: 4px;
+                }
+                .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+                    background: rgba(75, 85, 99, 0.8);
+                }
+                
+                /* Firefox scrollbar */
+                .scrollbar-custom {
+                    scrollbar-width: thin;
+                    scrollbar-color: rgba(75, 85, 99, 0.5) rgba(17, 24, 39, 0.5);
                 }
             `}</style>
         </div>
