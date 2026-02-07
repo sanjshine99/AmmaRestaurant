@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Chef, FindUs, Gallery, Header, Intro, Laurels, SpecialMenu, MenuCategories, ReviewsSection, AboutSection,MapSection } from '../container';
 import BreakfastHero from '../container/BreakfastHero';
-import MenuCard from '../container/NewMenu';
+import NewMenu from '../container/NewMenu';
 
 
 
@@ -13,7 +13,7 @@ const Home = ({ onCategoryClick, selectedCategory }) => (
     <AboutSection />
     {/* <BreakfastHero /> */}
     <MenuCategories onCategoryClick={onCategoryClick} />
-    <MenuCard />
+    <NewMenu />
     {/* <SpecialMenu selectedCategory={selectedCategory} /> */}
     <ReviewsSection />
     <Chef />

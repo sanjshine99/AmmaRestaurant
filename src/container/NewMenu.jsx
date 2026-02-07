@@ -1,21 +1,21 @@
-"use client";
-
 import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import menuData from "../constants/menuData";
 
-export default function DrinksMenu() {
+const ACCENT = "#86D276";
+
+export default function NewMenu() {
   const [selectedCategory, setSelectedCategory] = useState(menuData[0].category);
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = 300;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
+    if (!scrollRef.current) return;
+    const scrollAmount = window.innerWidth < 640 ? 180 : 300;
+
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   const getCurrentItems = () => {
@@ -32,19 +32,19 @@ export default function DrinksMenu() {
         <div className="w-full lg:w-[40%] lg:sticky lg:top-0 lg:h-screen h-[35vh] overflow-hidden">
           <div className="absolute inset-0 bg-black/40 z-10" />
           <img
-            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&q=80"
+            src="/break.jpg"
             className="w-full h-full object-cover"
             alt="Restaurant Menu"
           />
           <div className="absolute bottom-10 left-10 z-20 hidden lg:block">
             <h2 className="text-4xl font-serif text-white">Our Menu</h2>
-            <p className="mt-2 italic" style={{ color: "#E5162D" }}>
+            <p className="mt-2 italic" style={{ color: ACCENT }}>
               Authentic South Indian & Sri Lankan Cuisine
             </p>
           </div>
         </div>
 
-        {/* RIGHT CONTENT SECTION */}
+        {/* RIGHT CONTENT */}
         <div className="w-full lg:w-[60%] px-6 md:px-16 py-12 lg:py-20">
 
           {/* HEADER */}
@@ -57,21 +57,23 @@ export default function DrinksMenu() {
             </p>
           </header>
 
-          {/* CATEGORY NAV (UNCHANGED LAYOUT) */}
+          {/* CATEGORY NAV */}
           <div className="sticky top-0 bg-black/95 backdrop-blur-md z-20 border-b border-white/5 mb-12 -mx-4 px-4 py-4">
             <div className="relative flex items-center">
 
+              {/* LEFT ARROW (NOW WORKS ON MOBILE) */}
               <button
                 onClick={() => scroll("left")}
-                className="absolute left-0 z-50 p-2 text-white rounded-full shadow-xl hover:scale-110 transition-transform lg:flex hidden items-center justify-center -translate-x-1/2"
-                style={{ backgroundColor: "#E5162D" }}
+                className="absolute left-0 z-50 p-2 text-black rounded-full shadow-xl hover:scale-110 transition-transform flex items-center justify-center -translate-x-1/2"
+                style={{ backgroundColor: ACCENT }}
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
 
+              {/* SCROLLABLE CATEGORIES */}
               <div
                 ref={scrollRef}
-                className="overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth flex flex-nowrap gap-3 w-full touch-pan-x"
+                className="overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth flex flex-nowrap gap-3 w-full touch-pan-x px-8"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {menuData.map((cat) => (
@@ -80,12 +82,12 @@ export default function DrinksMenu() {
                     onClick={() => setSelectedCategory(cat.category)}
                     className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
                       selectedCategory === cat.category
-                        ? "text-white border-transparent"
+                        ? "text-black border-transparent"
                         : "border-white/10 text-white hover:border-white/40"
                     }`}
                     style={
                       selectedCategory === cat.category
-                        ? { backgroundColor: "#E5162D" }
+                        ? { backgroundColor: ACCENT }
                         : {}
                     }
                   >
@@ -94,24 +96,24 @@ export default function DrinksMenu() {
                 ))}
               </div>
 
+              {/* RIGHT ARROW (NOW WORKS ON MOBILE) */}
               <button
                 onClick={() => scroll("right")}
-                className="absolute right-0 z-50 p-2 text-white rounded-full shadow-xl hover:scale-110 transition-transform lg:flex hidden items-center justify-center translate-x-1/2"
-                style={{ backgroundColor: "#E5162D" }}
+                className="absolute right-0 z-50 p-2 text-black rounded-full shadow-xl hover:scale-110 transition-transform flex items-center justify-center translate-x-1/2"
+                style={{ backgroundColor: ACCENT }}
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
-
             </div>
           </div>
 
-          {/* MENU ITEMS (UNCHANGED STRUCTURE) */}
+          {/* MENU ITEMS */}
           <main className="relative z-10">
             <div className="space-y-4">
 
               <h2
                 className="text-sm font-black uppercase tracking-[0.3em] mb-8 flex items-center gap-4"
-                style={{ color: "#E5162D" }}
+                style={{ color: ACCENT }}
               >
                 <span className="h-px bg-white/10 flex-1" />
                 {selectedCategory}
@@ -137,7 +139,7 @@ export default function DrinksMenu() {
                   <div className="text-right flex flex-col items-end flex-shrink-0">
                     <span
                       className="text-base sm:text-lg font-light whitespace-nowrap"
-                      style={{ color: "#E5162D" }}
+                      style={{ color: ACCENT }}
                     >
                       {item.price}
                     </span>
