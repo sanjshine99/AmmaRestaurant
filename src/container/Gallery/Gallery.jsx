@@ -65,7 +65,7 @@ export default function Gallery() {
         />
 
         {/* DESCRIPTION */}
-        <p className="text-[#AAAAAA] mt-6 max-w-md leading-relaxed">
+        <p className="text-gray-100 mt-6 max-w-md leading-relaxed">
           Step into our restaurant and experience the perfect blend of vibrant
           décor and an inviting atmosphere that makes every visit feel special.
           Explore our gallery and get a taste of the incredible South Indian
@@ -92,7 +92,7 @@ export default function Gallery() {
           className="flex gap-4 md:gap-8 overflow-x-scroll scrollbar-hide
                      [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
-          {[images.gallery01, images.gallery02, images.gallery03, images.gallery04].map(
+          {[images.g1,images.g2,images.gallery01, images.gallery02, images.gallery03, images.gallery04].map(
             (image, index) => (
               <div
                 key={index}
@@ -101,7 +101,7 @@ export default function Gallery() {
                 <img
                   src={image}
                   alt={`gallery ${index + 1}`}
-                  className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-40"
+                  className="w-full h-full object-top transition-opacity duration-500 group-hover:opacity-40"
                   loading="lazy"
                 />
 

@@ -35,11 +35,15 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
+import g1 from '../../public/g1.png';
+import g2 from '../../public/g2.png';
 
 export default {
   bg,
   chef,
   G,
+  g1,
+  g2,
   gallery01,
   gallery02,
   gallery03,

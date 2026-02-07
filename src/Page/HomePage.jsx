@@ -11,7 +11,7 @@ const Home = ({ onCategoryClick, selectedCategory }) => (
 
     <Header />
     <AboutSection />
-    <BreakfastHero />
+    {/* <BreakfastHero /> */}
     <MenuCategories onCategoryClick={onCategoryClick} />
     <MenuCard />
     {/* <SpecialMenu selectedCategory={selectedCategory} /> */}
