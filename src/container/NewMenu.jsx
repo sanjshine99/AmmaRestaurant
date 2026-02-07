@@ -80,7 +80,7 @@ export default function NewMenu() {
                   <button
                     key={cat.category}
                     onClick={() => setSelectedCategory(cat.category)}
-                    className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
+                    className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all shrink-0 ${
                       selectedCategory === cat.category
                         ? "text-black border-transparent"
                         : "border-white/10 text-white hover:border-white/40"
@@ -123,7 +123,7 @@ export default function NewMenu() {
               {getCurrentItems().map((item, index) => (
                 <div
                   key={index}
-                  className="flex justify-between gap-3 sm:gap-6 py-6 border-b border-white/5 group hover:bg-white/[0.02] transition-all px-4 -mx-4 rounded-xl"
+                  className="flex justify-between gap-3 sm:gap-6 py-6 border-b border-white/5 group hover:bg-white/20 transition-all px-4 -mx-4 rounded-xl"
                 >
                   <div className="flex-1 min-w-0">
                     <h3 className="text-base sm:text-lg font-medium text-gray-100 group-hover:text-white transition-colors">
@@ -136,7 +136,7 @@ export default function NewMenu() {
                     )}
                   </div>
 
-                  <div className="text-right flex flex-col items-end flex-shrink-0">
+                  <div className="text-right flex flex-col items-end shrink-0">
                     <span
                       className="text-base sm:text-lg font-light whitespace-nowrap"
                       style={{ color: ACCENT }}
