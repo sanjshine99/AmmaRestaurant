@@ -25,7 +25,7 @@ export default function NewMenu() {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen" id="menu">
+    <div className="bg-black text-white min-h-screen font-base" id="menu">
       <div className="flex flex-col lg:flex-row w-full relative">
 
         {/* LEFT IMAGE SECTION (UNCHANGED) */}
