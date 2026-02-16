@@ -894,28 +894,32 @@ const menuData = [
       {
         "title": "Veg Meals",
         "price": "£9.99",
-        "tags": "", 
+        "tags": "Between 12pm to 6 pm", 
         "image": DEFAULT_IMAGE
       },
       {
         "title": "Chicken Meals",
         "price": "£10.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "Between 12pm to 6 pm", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Mutton Meals",
         "price": "£11.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "Between 12pm to 6 pm", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Fish Meals",
         "price": "£12.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "Between 12pm to 6 pm", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Amma Spl Meals",
         "price": "£14.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "Between 12pm to 6 pm", 
+        "image": DEFAULT_IMAGE
       }
     ]
   },
