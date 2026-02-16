@@ -7,7 +7,7 @@ export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center font-base">
+    <section className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
 
       {/* VIDEO BACKGROUND */}
       <video
@@ -71,7 +71,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
           transition={{ delay: 1, duration: 1 }}
-          className="mt-10 text-[9px] md:text-[11px] uppercase tracking-[0.3em] text-white space-y-2 font-base"
+          className="mt-10 text-[9px] md:text-[11px] uppercase tracking-[0.3em] text-white space-y-2"
         >
           <p>477 Beake Ave, Coventry CV6 2HT, United Kingdom</p>
           <p

@@ -8,7 +8,7 @@ const menuData = [
     "items": [
       {
         "title": "Vada (2 pcs)",
-        "price": "£2.29",
+        "price": "£2.99",
         "tags": "",
         "image": "vada.jpeg"
       },
@@ -21,6 +21,12 @@ const menuData = [
       {
         "title": "Rasa vada (2 pcs)",
         "price": "£3.49",
+        "tags": "",
+        "image": "rasavadai.jpeg"
+      },
+      {
+        "title": "Curd vada (2 pcs)",
+        "price": "£4.99",
         "tags": "",
         "image": "rasavadai.jpeg"
       },
@@ -41,7 +47,7 @@ const menuData = [
       },
       {
         "title": "Mini Idli (Dipped sambar)",
-        "price": "£5.5",
+        "price": "£5.50",
         "tags": "", "image": "Mini Idli (Dipped sambar).jpeg"
       },
       {
@@ -187,7 +193,7 @@ const menuData = [
     ]
   },
   {
-    "category": "Non-Veg",
+    "category": "Non-Veg Dosa",
     "items": [
       {
         "title": "Egg Dosa",
@@ -813,7 +819,8 @@ const menuData = [
       {
         "title": "Veg Meals",
         "price": "£9.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Chicken Meals",
@@ -863,42 +870,50 @@ const menuData = [
       {
         "title": "Veg Biryani",
         "price": "£8.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "Served With Paneer 65, Raitha, Gravy, Sweet", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Chicken Biryani",
         "price": "£9.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "Served with Chicken 65, Egg, Raitha, Sweet, Non Veg Gravy", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Chicken 65 Biryani",
         "price": "£10.99",
-        "tags": "", "image": DEFAULT_IMAGE
+         "tags": "Served with Chicken 65, Egg, Raitha, Sweet, Non Veg Gravy", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Chicken Lollipop Biryani",
         "price": "£11.99",
-        "tags": "", "image": DEFAULT_IMAGE
+         "tags": "Served with Chicken 65, Egg, Raitha, Sweet, Non Veg Gravy",  
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Mutton Biryani",
         "price": "£11.99",
-        "tags": "", "image": DEFAULT_IMAGE
+        "tags": "Served with Chicken 65, Egg, Raitha, Sweet, Non Veg Gravy", 
+         "image": DEFAULT_IMAGE
       },
       {
         "title": "Seafood Biryani",
         "price": "£12.99",
-        "tags": "", "image": DEFAULT_IMAGE
+         "tags": "Served with Chicken 65, Egg, Raitha, Sweet, Non Veg Gravy", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Prawn Biryani",
         "price": "£11.99",
-        "tags": "", "image": DEFAULT_IMAGE
+         "tags": "Served with Chicken 65, Egg, Raitha, Sweet, Non Veg Gravy", 
+        "image": DEFAULT_IMAGE
       },
       {
         "title": "Fish Biryani",
         "price": "£12.99",
-        "tags": "", "image": DEFAULT_IMAGE
+         "tags": "Served with Chicken 65, Egg, Raitha, Sweet, Non Veg Gravy", 
+        "image": DEFAULT_IMAGE
       }
     ]
   },

@@ -31,26 +31,26 @@ const App = () => {
       <Navbar />
 
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
-            <HomePage 
+            <HomePage
               onCategoryClick={handleCategoryClick}
               selectedCategory={selectedCategory}
             />
-          } 
+          }
         />
-        <Route 
-          path="/breakfast" 
-          element={<BreakFastPage />} 
+        <Route
+          path="/breakfast"
+          element={<BreakFastPage />}
         />
-        <Route 
-          path="/privacy-policy" 
-          element={<PrivacyPolicy />} 
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
         />
-        <Route 
-          path="/terms" 
-          element={<Term />} 
+        <Route
+          path="/terms"
+          element={<Term />}
         />
       </Routes>
 
