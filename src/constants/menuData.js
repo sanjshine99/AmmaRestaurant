@@ -689,7 +689,42 @@ const menuData = [
     ]
   },
   {
-    "category": "Sri Lankan Kothu Roti and Madurai Kothu Parota",
+    "category": "Sri Lankan Kothu Roti",
+    "items": [
+      {
+        "title": "Egg",
+        "price": "£7.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Chicken",
+        "price": "£8.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Mutton",
+        "price": "£9.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Seafood",
+        "price": "£10.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Amma Spl Mix Kothu",
+        "price": "£12.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Veg Kothu",
+        "price": "£6.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      }
+    ]
+  },
+   {
+    "category": "Madurai Kothu Parota",
     "items": [
       {
         "title": "Egg",
@@ -749,7 +784,47 @@ const menuData = [
     ]
   },
   {
-    "category": "Indo Chinese Fried Rice/Noodles",
+    "category": "Indo Chinese Fried Rice",
+    "items": [
+      {
+        "title": "Schezwann Chicken",
+        "price": "£8.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Schezwann Mutton",
+        "price": "£9.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Schezwann Prawn",
+        "price": "£10.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Schezwann Seafood",
+        "price": "£11.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Amma Spl Mix",
+        "price": "£12.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Schezwann Veg",
+        "price": "£7.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      },
+      {
+        "title": "Schezwann Paneer/Mushroom",
+        "price": "£8.99",
+        "tags": "", "image": DEFAULT_IMAGE
+      }
+    ]
+  },
+  {
+    "category": "Indo Chinese Noodles",
     "items": [
       {
         "title": "Schezwann Chicken",
