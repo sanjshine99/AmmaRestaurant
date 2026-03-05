@@ -30,7 +30,7 @@ export default function SpecialMenu({ selectedCategory }) {
   return (
     <section
       id="menu"
-      className="bg-[#0b0b0b] scroll-m-10 text-white px-6 py-20 font-base"
+      className="bg-[#0b0b0b] scroll-m-10 text-white px-6 py-20 "
     >
       {/* HEADER */}
       <div className="text-center mb-12">

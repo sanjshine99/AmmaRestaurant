@@ -6,7 +6,7 @@ import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 export default function Footer() {
   return (
     <footer
-      className="relative w-full bg-black text-white font-base"
+      className="relative w-full bg-black text-white "
     >
       {/* Background Image */}
       <div

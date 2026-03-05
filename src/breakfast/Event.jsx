@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Event = () => {
   return (
-    <section className="relative bg-black text-white min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20 font-base">
+    <section className="relative bg-black text-white min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20 ">
       {/* Soft gradient overlay */}
       <div className="absolute inset-0 pointer-events-none" />
 

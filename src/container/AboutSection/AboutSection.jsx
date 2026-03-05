@@ -28,7 +28,7 @@ const ScrollSection = ({ title, text, imageUrl, isReverse, index, highlightWords
       id="about"
     >
       <div
-        className={`flex flex-col lg:flex-row w-full font-base max-w-[1600px] h-full items-center gap-6 lg:gap-12 px-6 py-10 lg:px-12 lg:py-0 ${isReverse ? "lg:flex-row-reverse" : ""
+        className={`flex flex-col lg:flex-row w-full  max-w-[1600px] h-full items-center gap-6 lg:gap-12 px-6 py-10 lg:px-12 lg:py-0 ${isReverse ? "lg:flex-row-reverse" : ""
           }`}
       >
         {/* Image Section */}
@@ -72,7 +72,7 @@ const ScrollSection = ({ title, text, imageUrl, isReverse, index, highlightWords
               </span>
             ))}
           </h2>
-          <p className="text-white/80 text-sm md:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 font-base leading-relaxed">
+          <p className="text-white/80 text-sm md:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0  leading-relaxed">
             {text}
           </p>
         </motion.div>

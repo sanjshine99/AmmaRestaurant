@@ -13,7 +13,7 @@ const RestaurantHero = () => {
   ];
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden font-base bg-black">
+    <div className="relative min-h-screen w-full overflow-hidden bg-black">
       {/* 3-COLUMN ANIMATED BACKGROUND */}
       <div className="absolute inset-0 flex w-full h-full z-0">
         {bgImages.map((img, index) => (

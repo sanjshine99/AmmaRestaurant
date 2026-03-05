@@ -4,7 +4,7 @@ const MapSection = () => {
   const brandGreen = "#86D276";
 
   return (
-    <section className="bg-black px-6 lg:px-24 py-16 font-base">
+    <section className="bg-black px-6 lg:px-24 py-16 ">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}

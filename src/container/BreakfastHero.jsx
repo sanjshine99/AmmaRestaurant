@@ -5,7 +5,7 @@ export default function BreakfastHero() {
   return (
     <section className="w-full">
       {/* Top Content */}
-      <div className="bg-black text-center px-6 py-20 md:py-28 font-base">
+      <div className="bg-black text-center px-6 py-20 md:py-28 ">
         <h1 className="text-3xl md:text-5xl  font-bold text-[#86D276] mb-4">
           Start Your Day Right
         </h1>

@@ -29,7 +29,7 @@ const BookingModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 font-base">
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
       <div className="bg-[#0c0c0c] border border-[#86D276] w-full max-w-md p-8 rounded-xl relative shadow-[0_0_20px_rgba(134,210,118,0.2)]">
         
         {/* Close Button */}

@@ -21,7 +21,7 @@ export default function Gallery() {
   };
 
   return (
-    <section className="flex flex-col xl:flex-row bg-black px-6 lg:px-24 py-16 overflow-hidden font-base">
+    <section className="flex flex-col xl:flex-row bg-black px-6 lg:px-24 py-16 overflow-hidden ">
       
       {/* LEFT CONTENT */}
       <div className="flex-1 flex flex-col justify-center items-start lg:pr-12 text-white">

@@ -29,7 +29,7 @@ export default function MenuCategories({ onCategoryClick }) {
   };
 
   return (
-    <section className="bg-black py-24 overflow-hidden font-base">
+    <section className="bg-black py-24 overflow-hidden ">
       <div className="mx-auto max-w-[1600px] px-8">
         
         {/* SECTION TITLE */}
@@ -41,7 +41,7 @@ export default function MenuCategories({ onCategoryClick }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-base tracking-wide"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white  tracking-wide"
             style={{ 
               background: `linear-gradient(135deg, ${brandGreen}, #ffffff)`,
               WebkitBackgroundClip: 'text',
@@ -79,7 +79,7 @@ export default function MenuCategories({ onCategoryClick }) {
               {/* TITLE with HOVER EFFECT */}
               <h2 
                 style={{ "--hover-color": brandGreen }}
-                className="mb-8 text-[24px] font-bold tracking-[0.2em] text-white/80 font-base incline-text group-hover:scale-110 transition-all duration-500"
+                className="mb-8 text-[24px] font-bold tracking-[0.2em] text-white/80  incline-text group-hover:scale-110 transition-all duration-500"
               >
                 {item.title}
               </h2>

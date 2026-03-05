@@ -25,7 +25,7 @@ export default function NewMenu() {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen font-base" id="menu">
+    <div className="bg-black text-white min-h-screen" id="menu">
       <div className="flex flex-col lg:flex-row w-full relative">
 
         {/* LEFT IMAGE SECTION (UNCHANGED) */}
@@ -37,7 +37,7 @@ export default function NewMenu() {
             alt="Restaurant Menu"
           />
           <div className="absolute bottom-10 left-10 z-20 hidden lg:block">
-            <h2 className="text-4xl font-serif text-white">Our Menu</h2>
+            <h2 className="text-4xl text-white">Our Menu</h2>
             <p className="mt-2 italic" style={{ color: ACCENT }}>
               Authentic South Indian & Sri Lankan Cuisine
             </p>
@@ -49,7 +49,7 @@ export default function NewMenu() {
 
           {/* HEADER */}
           <header className="mb-12">
-            <h1 className="text-6xl font-serif mb-4 text-white tracking-tight">
+            <h1 className="text-6xl mb-4 text-white tracking-tight">
               Food Menu
             </h1>
             <p className="text-gray-500 max-w-md">

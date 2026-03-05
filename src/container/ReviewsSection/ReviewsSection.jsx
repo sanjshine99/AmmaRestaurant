@@ -32,7 +32,7 @@ export default function ReviewsSection() {
   return (
     <section 
       ref={containerRef} 
-      className="relative bg-[#0a0a0a] text-white py-24 sm:py-32 overflow-hidden font-base"
+      className="relative bg-[#0a0a0a] text-white py-24 sm:py-32 overflow-hidden "
     >
       {/* ===== BACKGROUND IMAGE LAYER ===== */}
       <div 
@@ -50,7 +50,7 @@ export default function ReviewsSection() {
         
         {/* ===== MOVING TITLE ===== */}
         <div className="overflow-hidden whitespace-nowrap mb-16 sm:mb-24">
-          <div className="flex w-max animate-[marquee_25s_linear_infinite] text-[48px] sm:text-[80px] font-bold font-base incline-text tracking-tighter">
+          <div className="flex w-max animate-[marquee_25s_linear_infinite] text-[48px] sm:text-[80px] font-bold  incline-text tracking-tighter">
             {[...Array(10)].map((_, i) => (
               <span 
                 key={i} 
@@ -85,10 +85,7 @@ export default function ReviewsSection() {
       </div>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600;700&family=Open+Sans:wght@400;500&display=swap');
-        :root { --font-base: 'Cormorant Upright', serif; --font-alt: 'Open Sans', sans-serif; }
-        .font-base { font-family: var(--font-base); }
-        .font-alt { font-family: var(--font-alt); }
+        :root {
         .incline-text { transform: skewX(-10deg); display: inline-block; }
         @keyframes marquee {
           from { transform: translateX(0); }
@@ -104,7 +101,7 @@ function ReviewPill({ name, stars, text, brandGreen }) {
     <div className="shrink-0 w-[280px] sm:w-[420px] min-h-[150px] rounded-3xl sm:rounded-[40px] bg-linear-to-br from-neutral-900/80 to-black/90 backdrop-blur-md px-6 py-6 sm:px-10 sm:py-10 border border-white/10 shadow-2xl flex flex-col justify-between">
       <div className="flex items-center justify-between mb-4">
         <h4 
-          className="text-lg sm:text-2xl font-bold font-base incline-text tracking-wide"
+          className="text-lg sm:text-2xl font-bold  incline-text tracking-wide"
           style={{ color: brandGreen }}
         >
           {name}
