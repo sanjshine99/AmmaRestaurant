@@ -6,15 +6,15 @@ const row1 = [
   { name: "Ahil Raja Thanu Maheswari", stars: 5, text: "South South Indian dishes served here are authentic and tasty. Must try restaurant..." },
   { name: "Sunil K", stars: 5, text: "Went for dinner this evening. Service was very good by Sai & the food was amazing..." },
   { name: "Karthick Ram", stars: 5, text: "🎉 Birthday celebration at Amma Kitchen – such a wonderful atmosphere and truly delicious food!" },
-  { name: "akhil chowdary", stars: 5, text: "i came to Coventry for my job purpose. i have just tried chicken dosa and mutton biryani simply awesome." },
+  { name: "Akhil chowdary", stars: 5, text: "i came to Coventry for my job purpose. i have just tried chicken dosa and mutton biryani simply awesome." },
 ];
 
 const row2 = [
-  { name: "Adithya Jakka", stars: 5, text: "I had a delightful experience at Amma Kitchen Coventry. The ambience is pleasant and comfortable..." },
-  { name: "Ahil Raja Thanu Maheswari", stars: 5, text: "South South Indian dishes served here are authentic and tasty..." },
-  { name: "Sunil K", stars: 5, text: "Went for dinner this evening. Service was very good..." },
-  { name: "Karthick Ram", stars: 5, text: "🎉 Birthday celebration at Amma Kitchen..." },
-  { name: "akhil chowdary", stars: 5, text: "i came to Coventry for my job purpose..." },
+  { name: "PranithPrithvi Durairaj", stars: 5, text: "Fastest serving !!! Yummy and delicious food!! Very tasty! Highly recommended!! We enjoyed our family dinner out" },
+  { name: "Deep Sangar", stars: 5, text: "If you’re looking for proper, authentic Indian food, this place absolutely delivers. The flavours are beautiful and genuinely taste like they’ve come straight from India — rich, fresh, and full of depth in every bite..." },
+  { name: "Rahul Kathir", stars: 5, text: "We had a lovely Valentine’s Day dinner at Amma's Kitchen. The food was absolutely delicious, full of authentic flavours, and beautifully presented." },
+  { name: "Chi", stars: 5, text: "Amma Kitchen in Coventry feels like a warm embrace of authentic South Indian cooking. The name says it all—it's homely, comforting food made with care." },
+  { name: "Maruboina Jayanth", stars: 5, text: "I visited Amma's Kitchen yesterday for dinner, and honestly, it felt like having a home-cooked meal...." },
 ];
 
 export default function ReviewsSection() {
@@ -112,7 +112,7 @@ function ReviewPill({ name, stars, text, brandGreen }) {
           ))}
         </div>
       </div>
-      <p className="text-neutral-400 text-xs sm:text-base leading-relaxed font-alt incline-text italic opacity-90 line-clamp-4">
+      <p className="text-neutral-400 text-xs sm:text-base leading-relaxed incline-text italic opacity-90 line-clamp-4">
         "{text}"
       </p>
     </div>

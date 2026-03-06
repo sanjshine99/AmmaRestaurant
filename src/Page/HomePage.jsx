@@ -3,6 +3,7 @@ import React from 'react';
 import { Chef, FindUs, Gallery, Header, Intro, Laurels, SpecialMenu, MenuCategories, ReviewsSection, AboutSection,MapSection } from '../container';
 import BreakfastHero from '../container/BreakfastHero';
 import NewMenu from '../container/NewMenu';
+import Banner from '../components/Banner';
 
 
 
@@ -10,11 +11,10 @@ const Home = ({ onCategoryClick, selectedCategory }) => (
   <div>
 
     <Header />
+    <Banner />
     <AboutSection />
-    {/* <BreakfastHero /> */}
     <MenuCategories onCategoryClick={onCategoryClick} />
     <NewMenu />
-    {/* <SpecialMenu selectedCategory={selectedCategory} /> */}
     <ReviewsSection />
     <Chef />
     <Intro />

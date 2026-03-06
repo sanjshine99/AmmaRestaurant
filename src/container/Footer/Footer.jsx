@@ -1,5 +1,6 @@
 import React from "react";
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
+import { Link } from "react-router-dom";
 // If you are using react-router-dom, uncomment the line below:
 // import { Link } from "react-router-dom";
 
@@ -114,13 +115,13 @@ export default function Footer() {
         <div className="mt-16 border-t border-white/20 pt-6 text-center text-sm opacity-80">
           <p>&copy; {new Date().getFullYear()} Amma Kitchen Coventry. All rights reserved.</p>
           <div className="mt-2 flex justify-center gap-4">
-            <a href="/terms" className="hover:text-yellow-400 transition underline underline-offset-4">
+            <Link to="/terms" className="hover:text-yellow-400 transition underline underline-offset-4">
               Terms & Conditions
-            </a>
+            </Link>
             <span>|</span>
-            <a href="/privacy-policy" className="hover:text-yellow-400 transition underline underline-offset-4">
+            <Link to="/privacy-policy" className="hover:text-yellow-400 transition underline underline-offset-4">
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
