@@ -1,6 +1,7 @@
-import React from "react";
+
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { siteConfig } from "../../../SiteConfig";
 // If you are using react-router-dom, uncomment the line below:
 // import { Link } from "react-router-dom";
 
@@ -26,7 +27,7 @@ export default function Footer() {
 
             {/* Address */}
             <a
-              href="https://maps.app.goo.gl/JuhckJ5LSQ6MjvkTA"
+              href={siteConfig.addressLink}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-sm opacity-90 hover:opacity-100 hover:underline transition"
@@ -38,7 +39,7 @@ export default function Footer() {
 
             {/* Phone */}
             <a
-              href="tel:+442475090098"
+              href={`tel:${siteConfig.phoneNumber}`}
               className="block mt-2 text-sm opacity-90 hover:opacity-100 hover:underline transition"
             >
               +44 24 7509 0098
@@ -71,28 +72,28 @@ export default function Footer() {
 
             <div className="flex gap-5 text-xl">
               <a
-                href="https://web.facebook.com/ammakitchen.uk/"
+                href={siteConfig.Facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-yellow-400 transition"
+                
               >
-                <FiFacebook />
+                <FiFacebook className="hover:text-blue-600 transition"/>
               </a>
               <a
-                href="https://www.instagram.com/amma_kitchen_coventry/"
+                href={siteConfig.Instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-yellow-400 transition"
+                
               >
-                <FiInstagram />
+                <FiInstagram className="hover:text-pink-600 transition"/>
               </a>
               <a
-                href="https://www.youtube.com/channel/UCoW-kEyS6wXD8y0NfeRHDJA"
+                href={siteConfig.YouTube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-yellow-400 transition"
+                
               >
-                <FiYoutube />
+                <FiYoutube className="hover:text-red-600 transition"/>
               </a>
             </div>
           </div>

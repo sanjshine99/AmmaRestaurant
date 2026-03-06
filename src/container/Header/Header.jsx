@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import BookingModal from "../../container/BookingModal";
+import { siteConfig } from "../../../SiteConfig";
 
 export default function HeroSection() {
   const brandGreen = "#86D276";
@@ -56,7 +57,7 @@ export default function HeroSection() {
           </button>
 
           <a
-            href="tel:+442475090098"
+            href={`tel:${siteConfig.phoneNumber}`}
             className="w-[200px] py-3 border-2 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#86D276] transition-all duration-300 flex items-center justify-center group"
             style={{ borderColor: brandGreen }}
           >
@@ -73,7 +74,7 @@ export default function HeroSection() {
           transition={{ delay: 1, duration: 1 }}
           className="mt-10 text-[9px] md:text-[11px] uppercase tracking-[0.3em] text-white space-y-2"
         >
-          <p>477 Beake Ave, Coventry CV6 2HT, United Kingdom</p>
+          <p>{siteConfig.address}</p>
           <p
             style={{ color: brandGreen }}
             className="font-medium tracking-[0.2em]"

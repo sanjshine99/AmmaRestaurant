@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const ScrollMenu = () => {
   const cocktailsTop = ["Amma Kitchen", "Idly", "Dosa", "Poori", "Kessari"];

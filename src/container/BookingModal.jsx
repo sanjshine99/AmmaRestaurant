@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { siteConfig } from "../../SiteConfig";
 
 const BookingModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
   const handleWhatsAppSend = (e) => {
     e.preventDefault();
-    const phoneNumber = "442475090098";
+    const phoneNumber = siteConfig.whatsappNumber;
     const message = encodeURIComponent(
       `*Table Reservation Request*\n\n` +
       `Name: ${formData.name}\n` +

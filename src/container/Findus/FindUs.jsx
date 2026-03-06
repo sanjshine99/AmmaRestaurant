@@ -1,6 +1,7 @@
-import React from "react";
+
 import SubHeading from "../../components/SubHeading/SubHeading";
 import { images } from "../../constants";
+import { siteConfig } from "../../../SiteConfig";
 
 export default function FindUs() {
   const brandGreen = "#86D276";
@@ -46,12 +47,12 @@ export default function FindUs() {
                   Location
                 </p>
                 <a
-                  href="https://maps.app.goo.gl/JuhckJ5LSQ6MjvkTA"
+                  href={siteConfig.addressLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 text-sm leading-relaxed hover:text-[#86D276] transition-colors duration-200"
                 >
-                  477 Beake Ave, Coventry CV6 2HT, United Kingdom
+                  {siteConfig.address}
                 </a>
               </div>
 
@@ -64,10 +65,10 @@ export default function FindUs() {
                   Telephone
                 </p>
                 <a
-                  href="tel:+442475090098"
+                  href={`tel:${siteConfig.phoneNumber}`}
                   className="text-gray-300 text-sm hover:text-[#86D276] transition-colors duration-200"
                 >
-                  +44 24 7509 0098
+                  {siteConfig.displayPhone}
                 </a>
               </div>
 

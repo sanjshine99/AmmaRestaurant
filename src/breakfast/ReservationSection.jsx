@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MapPin, Phone, Plus, Minus, Users } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { siteConfig } from "../../SiteConfig";
 
 export default function Contact() {
   const initialFormData = {
@@ -34,7 +35,7 @@ export default function Contact() {
       `Time: ${formData.time}%0A` +
       `Preferred Breakfast: ${formData.cocktails || "Not specified"}`;
 
-    window.open(`https://wa.me/94711009464?text=${message}`, "_blank");
+    window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${message}`, "_blank");
     setFormData(initialFormData);
   };
 
@@ -195,11 +196,11 @@ export default function Contact() {
             <div className="md:col-span-2 mt-8 pt-8 border-t border-white/10 text-center space-y-2 text-xs text-gray-300">
               <div className="flex justify-center gap-2 items-center">
                 <MapPin size={12} className="text-[#86D276]" />
-                477 Beake Ave, Coventry CV6 2HT, United Kingdom
+                {siteConfig.address}
               </div>
               <div className="flex justify-center gap-2 items-center">
                 <Phone size={12} className="text-[#86D276]" />
-                +44 24 7509 0098
+                {siteConfig.displayPhone}
               </div>
             </div>
           </form>
