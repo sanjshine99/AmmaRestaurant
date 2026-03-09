@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function GDPRConsent() {
   const [visible, setVisible] = useState(false);
@@ -47,12 +48,12 @@ export default function GDPRConsent() {
           
           {/* FIXED PRIVACY LINK COLOR */}
           <p className="mb-4">
-            <a
-              href="/privacy-policy"
+            <Link
+              to="/privacy-policy"
               className="text-[#86D276] font-medium underline decoration-[#86D276] hover:text-white transition-colors"
             >
               See our Privacy Policy
-            </a>
+            </Link>
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3">
