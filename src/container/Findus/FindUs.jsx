@@ -111,7 +111,7 @@ export default function FindUs() {
               style={{ borderColor: brandGreen }}
             >
               <img
-                src="/contact.png"
+                src="/replace.jpeg"
                 alt="Restaurant"
                 loading="lazy"
                 className="w-full max-w-[320px] md:max-w-[450px] xl:max-w-[550px] object-cover shadow-2xl"
