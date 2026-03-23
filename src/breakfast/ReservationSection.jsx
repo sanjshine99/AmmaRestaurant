@@ -116,20 +116,11 @@ export default function Contact() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-        {/* LEFT IMAGE */}
-        <div className="relative w-full h-80 md:h-[500px] lg:h-[590px] rounded-3xl overflow-hidden border border-white/10">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/contact.jpeg')" }}
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
+      {/* CONTENT — single column centered */}
+      <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center justify-center">
 
         {/* FORM */}
-        <div className="rounded-3xl p-8 md:p-12 backdrop-blur-xl bg-white/5 border border-white/10">
+        <div className="w-full rounded-3xl p-8 md:p-12 backdrop-blur-xl bg-white/5 border border-white/10">
 
           <div className="text-center mb-10">
             <h3 className="text-3xl md:text-4xl font-semibold">
@@ -203,7 +194,7 @@ export default function Contact() {
             <div className="md:col-span-2 mt-4">
               <button
                 type="submit"
-                className="border border-white px-12 py-3 uppercase text-xs font-bold tracking-[0.2em] hover:bg-[#86D276] hover:text-black hover:border-[#86D276] rounded-xl transition-all duration-300 w-full lg:w-auto flex items-center justify-center gap-3"
+                className="border border-white px-12 py-3 uppercase text-xs font-bold tracking-[0.2em] hover:bg-[#86D276] hover:text-black hover:border-[#86D276] rounded-xl transition-all duration-300 w-full flex items-center justify-center gap-3"
               >
                 <FaWhatsapp size={20} />
                 Reservation
