@@ -111,10 +111,10 @@ export default function FindUs() {
               style={{ borderColor: brandGreen }}
             >
               <img
-                src={images.findus}
+                src="/contact.png"
                 alt="Restaurant"
                 loading="lazy"
-                className="w-full max-w-[320px] md:max-w-[450px] xl:max-w-[550px] h-auto object-cover shadow-2xl"
+                className="w-full max-w-[320px] md:max-w-[450px] xl:max-w-[550px] object-cover shadow-2xl"
               />
               {/* Decorative corner */}
               <div
