@@ -1,9 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MapPin, Phone, Plus, Minus, Users } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { siteConfig } from "../../SiteConfig";
 
 export default function Contact() {
+  const mobileImages = ["/m1.png", "/m2.png"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isMobile]);
+
+  const bgImage = isMobile ? mobileImages[currentIndex] : "/bgnew.png";
+
   const initialFormData = {
     adults: 0,
     children: 0,
@@ -25,7 +46,6 @@ export default function Contact() {
 
   const handleWhatsAppBooking = (e) => {
     e.preventDefault();
-
     const message =
       `Hello Amma Kitchen, I would like to reserve a table:%0A%0A` +
       `Adults: ${formData.adults}%0A` +
@@ -34,7 +54,6 @@ export default function Contact() {
       `Date: ${formData.date}%0A` +
       `Time: ${formData.time}%0A` +
       `Preferred Breakfast: ${formData.cocktails || "Not specified"}`;
-
     window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${message}`, "_blank");
     setFormData(initialFormData);
   };
@@ -53,9 +72,7 @@ export default function Contact() {
           type="button"
           onClick={() => decrement(field)}
           disabled={formData[field] <= min}
-          className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center
-            text-white hover:border-[#86D276] hover:text-[#86D276] disabled:opacity-30
-            disabled:cursor-not-allowed transition-all duration-200 shrink-0"
+          className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-[#86D276] hover:text-[#86D276] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 shrink-0"
         >
           <Minus size={12} />
         </button>
@@ -65,8 +82,7 @@ export default function Contact() {
         <button
           type="button"
           onClick={() => increment(field)}
-          className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center
-            text-white hover:border-[#86D276] hover:text-[#86D276] transition-all duration-200 shrink-0"
+          className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-[#86D276] hover:text-[#86D276] transition-all duration-200 shrink-0"
         >
           <Plus size={12} />
         </button>
@@ -77,7 +93,7 @@ export default function Contact() {
   return (
     <section
       id="breakfast-contact"
-      className="relative w-full scroll-m-20 py-20 px-4 md:px-8 lg:px-16 bg-black text-white"
+      className="relative w-full scroll-m-20 py-20 px-4 md:px-8 lg:px-16 text-white overflow-hidden"
     >
       <style>{`
         input[type="date"], input[type="time"] { color-scheme: light; }
@@ -89,7 +105,19 @@ export default function Contact() {
         select option { background-color: #111; color: white; }
       `}</style>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* BACKGROUND IMAGE */}
+      <div className="absolute inset-0 z-0">
+        <img
+          key={bgImage}
+          src={bgImage}
+          alt="Background"
+          className="w-full h-full object-cover opacity-40 transition-opacity duration-700"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT IMAGE */}
         <div className="relative w-full h-80 md:h-[500px] lg:h-[590px] rounded-3xl overflow-hidden border border-white/10">
@@ -111,13 +139,9 @@ export default function Contact() {
 
           <form onSubmit={handleWhatsAppBooking} className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            {/* Adults Counter */}
             <CounterField label="Adults" field="adults" min={1} />
-
-            {/* Children Counter */}
             <CounterField label="Children" field="children" min={0} />
 
-            {/* Guest Summary */}
             <div className="md:col-span-2 flex items-center gap-2 bg-[#86D276]/5 border border-[#86D276]/20 rounded-md px-4 py-3">
               <Users size={14} className="text-[#86D276] shrink-0" />
               <span className="text-xs text-gray-300">
@@ -134,7 +158,6 @@ export default function Contact() {
               </span>
             </div>
 
-            {/* Date */}
             <div className="relative border border-white/20 rounded-md focus-within:ring-2 focus-within:ring-[#86D276]">
               <label className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 px-2 pt-1">
                 Select Date
@@ -149,7 +172,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Time */}
             <div className="relative border border-white/20 rounded-md focus-within:ring-2 focus-within:ring-[#86D276]">
               <label className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 px-2 pt-1">
                 Select Time
@@ -164,7 +186,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Preferred Breakfast */}
             <div className="relative border border-white/20 rounded-md md:col-span-2">
               <label className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 px-2 pt-1">
                 Preferred Breakfast
@@ -179,20 +200,16 @@ export default function Contact() {
               />
             </div>
 
-            {/* Submit */}
             <div className="md:col-span-2 mt-4">
               <button
                 type="submit"
-                className="border border-white px-12 py-3 uppercase text-xs font-bold tracking-[0.2em]
-                  hover:bg-[#86D276] hover:text-black hover:border-[#86D276] rounded-xl transition-all duration-300
-                  w-full lg:w-auto flex items-center justify-center gap-3"
+                className="border border-white px-12 py-3 uppercase text-xs font-bold tracking-[0.2em] hover:bg-[#86D276] hover:text-black hover:border-[#86D276] rounded-xl transition-all duration-300 w-full lg:w-auto flex items-center justify-center gap-3"
               >
                 <FaWhatsapp size={20} />
                 Reservation
               </button>
             </div>
 
-            {/* Contact Info */}
             <div className="md:col-span-2 mt-8 pt-8 border-t border-white/10 text-center space-y-2 text-xs text-gray-300">
               <div className="flex justify-center gap-2 items-center">
                 <MapPin size={12} className="text-[#86D276]" />

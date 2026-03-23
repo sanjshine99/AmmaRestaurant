@@ -1,24 +1,45 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Event = () => {
+  const mobileImages = ["/m1.png", "/m2.png"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isMobile]);
+
+  const bgImage = isMobile ? mobileImages[currentIndex] : "/bgnew.png";
+
+  const btnClass = "inline-block border border-white/40 rounded-lg px-10 py-3 uppercase tracking-widest text-xs font-semibold text-white hover:bg-[#86D276] hover:border-[#86D276] hover:text-black transition-all duration-300";
+
   return (
     <section className="relative bg-black text-white min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20 overflow-hidden">
-      
-      {/* BACKGROUND IMAGE CONTAINER */}
+
       <div className="absolute inset-0 z-0">
         <img
-          src="/bgnew.png" 
+          key={bgImage}
+          src={bgImage}
           alt="Background"
-          className="w-full h-full object-cover opacity-40" // Lower opacity so text pops
+          className="w-full h-full object-cover opacity-40 transition-opacity duration-700"
         />
-        {/* Gradient Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/30 " />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-          {/* Left Content */}
           <div className="lg:col-span-5 space-y-8 text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide uppercase">
               Weekend & Bank Holiday <br className="hidden lg:block" />
@@ -37,22 +58,14 @@ const Event = () => {
             </p>
 
             <div className="pt-4">
-              <a
-                href="breakfast#breakfast-contact"
-                className="inline-block border border-white/40 rounded-lg px-10 py-3 uppercase tracking-widest text-xs font-semibold 
-                hover:bg-[#86D276] hover:border-[#86D276] transition-all duration-300"
-              >
-                <span className="hover:text-black hover:font-bold">
-                  Discover Breakfast
-                </span>
+              <a href="breakfast#breakfast-contact" className={btnClass}>
+                Discover Breakfast
               </a>
             </div>
           </div>
 
-          {/* Right Content: Images */}
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
 
-            {/* Main Image */}
             <div className="aspect-4/5 overflow-hidden rounded-xl border border-white/10">
               <img
                 src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800"
@@ -62,7 +75,6 @@ const Event = () => {
               />
             </div>
 
-            {/* Side Image */}
             <div className="hidden md:block aspect-4/5 overflow-hidden translate-y-12 lg:translate-y-20 rounded-xl border border-white/10">
               <img
                 src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800"
