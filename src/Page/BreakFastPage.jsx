@@ -11,9 +11,10 @@ const BreakFastPage = () => {
     <div>
       <BreakHeroSection />
       <AboutSection />
-      <Event />
+       <MenuSection />
       <ScrollMenu />
-      <MenuSection />
+     
+      <Event />
       <Contact />
     </div>
   )

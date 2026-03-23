@@ -1,41 +1,10 @@
 import { useState, useEffect } from "react";
 
 const Event = () => {
-  const mobileImages = ["/m1.png", "/m2.png"];
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  useEffect(() => {
-    if (!isMobile) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [isMobile]);
-
-  const bgImage = isMobile ? mobileImages[currentIndex] : "/bgnew.png";
-
   const btnClass = "inline-block border border-white/40 rounded-lg px-10 py-3 uppercase tracking-widest text-xs font-semibold text-white hover:bg-[#86D276] hover:border-[#86D276] hover:text-black transition-all duration-300";
 
   return (
     <section className="relative bg-black text-white min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20 overflow-hidden">
-
-      <div className="absolute inset-0 z-0">
-        <img
-          key={bgImage}
-          src={bgImage}
-          alt="Background"
-          className="w-full h-full object-cover opacity-40 transition-opacity duration-700"
-        />
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
