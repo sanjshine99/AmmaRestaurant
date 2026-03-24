@@ -31,9 +31,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <div className="flex items-center">
+        <HashLink smooth to="/" className="flex items-center">
           <img src="/logo.png" alt="logo" className="h-15 w-auto" loading="lazy"/>
-        </div>
+        </HashLink>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
@@ -83,11 +83,11 @@ const Navbar = () => {
             onClick={() => setToggleMenu(false)}
           />
 
-          <HashLink smooth to="#home" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Home</HashLink>
-          <HashLink smooth to="#about" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>About</HashLink>
-          <HashLink smooth to="#menu" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Menu</HashLink>
+          <HashLink smooth to="/#" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Home</HashLink>
+          <HashLink smooth to="/#about" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>About</HashLink>
+          <HashLink smooth to="/#menu" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Menu</HashLink>
           <Link to="/breakfast" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>BreakFast</Link>
-          <HashLink smooth to="#contact" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Contact</HashLink>
+          <HashLink smooth to="/#contact" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Contact</HashLink>
 
           {/* Corrected Mobile Order Button */}
           <button
