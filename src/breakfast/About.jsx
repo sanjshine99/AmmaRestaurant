@@ -91,7 +91,7 @@ const AboutSection = () => {
                         className="w-full mt-12 lg:hidden"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1550966841-3ee7adac1661?auto=format&fit=crop&q=80"
+                            src="/Onion Dosa.jpeg"
                             alt="Plating"
                             loading="lazy"
                             className="w-full h-64 object-cover"

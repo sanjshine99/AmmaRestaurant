@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <HashLink smooth to="/" className="flex items-center">
+        <HashLink smooth to="/#" className="flex items-center">
           <img src="/logo.png" alt="logo" className="h-15 w-auto" loading="lazy"/>
         </HashLink>
 
