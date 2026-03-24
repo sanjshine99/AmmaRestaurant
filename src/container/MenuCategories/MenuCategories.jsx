@@ -57,6 +57,7 @@ export default function MenuCategories({ onCategoryClick }) {
             <img 
               src="/leafe.png" 
               alt="Decorative leaf" 
+              loading="lazy"
               className="w-25 h-16 md:w-45 md:h-20 object-contain opacity-80"
             />
           </div>
@@ -116,8 +117,6 @@ export default function MenuCategories({ onCategoryClick }) {
           
         </div>
       </div>
-
-     
     </section>
   );
 }

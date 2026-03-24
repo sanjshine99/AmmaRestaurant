@@ -8,6 +8,7 @@ export default function SubHeading({ title }) {
       </p>
       <img
         src="/leafe.png"
+        loading="lazy"
         alt=""
         width={65}
         height={90}

@@ -52,7 +52,7 @@ export default function Chef() {
         <img
           src={images.chef}
           alt="Amma Kitchen"
-           loading="lazy"
+          loading="lazy"
           className="w-full sm:w-4/5 md:w-3/4 lg:w-[90%] max-w-[550px] object-contain"
         />
       </div>
@@ -64,7 +64,7 @@ export default function Chef() {
       >
         <SubHeading title={slide.sub} />
 
-        <h1 
+        <h1
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  mt-4 leading-tight"
           style={{ color: brandGreen }}
         >
@@ -73,11 +73,11 @@ export default function Chef() {
 
         <div className="flex flex-col mt-8 md:mt-10 w-full">
           <div className="flex items-start mb-6">
-            <img 
-              src={images.quote} 
-              alt="quote" 
-               loading="lazy"
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mr-4" 
+            <img
+              src={images.quote}
+              alt="quote"
+              loading="lazy"
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mr-4"
             />
             <p className="italic text-lg sm:text-xl md:text-2xl leading-relaxed">
               {slide.text1}
@@ -91,16 +91,16 @@ export default function Chef() {
 
         {/* SIGNATURE SECTION */}
         <div className="flex flex-col mt-10 md:mt-14 w-full">
-          <p 
+          <p
             className="text-3xl sm:text-4xl md:text-5xl "
-            style={{ 
+            style={{
               color: brandGreen,
             }}
           >
             Amma Kitchen
           </p>
-          <div 
-            className="h-px w-24 mt-2" 
+          <div
+            className="h-px w-24 mt-2"
             style={{ backgroundColor: brandGreen }}
           />
         </div>

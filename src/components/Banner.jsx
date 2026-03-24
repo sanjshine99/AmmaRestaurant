@@ -59,6 +59,7 @@ export default function Banner() {
                         <img
                             src="/Paneer Dosa.jpeg"
                             alt="South Indian feast"
+                            loading="lazy"
                             className="absolute inset-0 w-full h-full  object-cover"
                         />
 

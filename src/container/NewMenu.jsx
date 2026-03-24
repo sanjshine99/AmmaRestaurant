@@ -35,6 +35,7 @@ export default function NewMenu() {
             src="/break.jpg"
             className="w-full h-full object-cover"
             alt="Restaurant Menu"
+            loading="lazy"
           />
           <div className="absolute bottom-10 left-10 z-20 hidden lg:block">
             <h2 className="text-4xl text-white">Our Menu</h2>

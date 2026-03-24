@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="flex items-center">
-          <img src="/logo.png" alt="logo" className="h-15 w-auto" />
+          <img src="/logo.png" alt="logo" className="h-15 w-auto" loading="lazy"/>
         </div>
 
         {/* Desktop Links */}

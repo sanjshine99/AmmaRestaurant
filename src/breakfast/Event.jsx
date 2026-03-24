@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 const Event = () => {
   const btnClass = "inline-block border border-white/40 rounded-lg px-10 py-3 uppercase tracking-widest text-xs font-semibold text-white hover:bg-[#86D276] hover:border-[#86D276] hover:text-black transition-all duration-300";
 
@@ -43,7 +41,6 @@ const Event = () => {
                 src="/contact.jpeg" 
                 alt="Amma Kitchen Food Preparation"
                 loading="lazy"
-                // Maintaining the cool original hover effect
                 className="w-full h-full object-cover transition-all duration-700 hover:brightness-100"
               />
             </div>

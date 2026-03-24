@@ -58,6 +58,7 @@ const AboutSection = () => {
                             <img
                                 src="/Onion Dosa.jpeg"
                                 alt="Chef detail"
+                                loading="lazy"
                                 className="w-full h-full object-cover transition-all duration-700"
                             />
                         </div>
@@ -76,6 +77,7 @@ const AboutSection = () => {
                         <img
                             src="/Gemini_Generated_Image_1os7141os7141os7.jpeg"
                             alt="Main Kitchen View"
+                            loading="lazy"
                             className="w-full h-full object-cover"
                         />
                     </motion.div>
@@ -91,6 +93,7 @@ const AboutSection = () => {
                         <img
                             src="https://images.unsplash.com/photo-1550966841-3ee7adac1661?auto=format&fit=crop&q=80"
                             alt="Plating"
+                            loading="lazy"
                             className="w-full h-64 object-cover"
                         />
                     </motion.div>

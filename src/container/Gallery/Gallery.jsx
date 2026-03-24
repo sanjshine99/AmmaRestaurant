@@ -41,7 +41,7 @@ export default function Gallery() {
           Gallery
         </h1>
 
-        <img src="/leafe.png" alt="leaf decoration" className="mt-3 w-24 md:w-28 opacity-90" />
+        <img src="/leafe.png" alt="leaf decoration" loading="lazy" className="mt-3 w-24 md:w-28 opacity-90" />
 
         <p className="text-gray-100 mt-6 max-w-md leading-relaxed">
           Step into our restaurant and experience the perfect blend of vibrant

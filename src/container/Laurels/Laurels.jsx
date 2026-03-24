@@ -7,21 +7,18 @@ const dishData = [
     title: "Tiffin & Dosa",
     subtitle:
       "Classic South Indian tiffin items and crispy veg dosas, perfect for any time of day.",
-    icon: "🫓",
     tag: "Vegetarian",
   },
   {
     title: "Starters & Soups",
     subtitle:
       "A variety of veg and non-veg starters, warming soups, and flavourful appetizers.",
-    icon: "🍲",
     tag: "Veg & Non-Veg",
   },
   {
     title: "Tandoori & Wild Delicacy",
     subtitle:
       "Smoky, perfectly spiced tandoori dishes and special wild delicacies prepared with traditional techniques.",
-    icon: "🔥",
     tag: "Chef's Special",
   },
   {

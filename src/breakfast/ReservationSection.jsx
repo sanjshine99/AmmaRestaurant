@@ -111,6 +111,7 @@ export default function Contact() {
           key={bgImage}
           src={bgImage}
           alt="Background"
+          loading="lazy"
           className="w-full h-full object-cover opacity-100 transition-opacity duration-700"
         />
         <div className="absolute inset-0 bg-black/50" />

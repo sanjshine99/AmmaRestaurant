@@ -47,6 +47,7 @@ const ScrollSection = ({ title, text, imageUrl, isReverse, index, highlightWords
               src={imageUrl}
               alt={title}
               className="w-full h-full object-top"
+              loading="lazy"
             />
           </div>
         </motion.div>

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Chef, FindUs, Gallery, Header, Intro, Laurels, SpecialMenu, MenuCategories, ReviewsSection, AboutSection,MapSection } from '../container';
-import BreakfastHero from '../container/BreakfastHero';
+import { Chef, FindUs, Gallery, Header, Intro, Laurels, MenuCategories, ReviewsSection, AboutSection,MapSection } from '../container';
 import NewMenu from '../container/NewMenu';
 import Banner from '../components/Banner';
 

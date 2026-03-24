@@ -44,6 +44,7 @@ const RestaurantHero = () => {
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 min-h-[80vh]">
         <motion.img
           src='logo.png'
+          loading="lazy"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}

@@ -24,6 +24,7 @@ export default function BreakfastHero() {
         <img
           src="/break.jpg"
           alt="Breakfast Buffet"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>

@@ -1,4 +1,3 @@
-import AboutUs from './AboutUs/AboutUs';
 import Chef from './Chef/Chef';
 import FindUs from './Findus/FindUs';
 import Footer from './Footer/Footer';
@@ -12,7 +11,6 @@ import ReviewsSection from './ReviewsSection/ReviewsSection.jsx';
 import AboutSection from './AboutSection/AboutSection.jsx';
 import MapSection from "./MapSection/MapSection.jsx"
 export {
-  AboutUs,
   Chef,
   FindUs,
   Footer,
