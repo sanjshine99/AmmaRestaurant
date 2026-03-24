@@ -22,7 +22,7 @@ export default function BreakfastHero() {
       {/* Image Section */}
       <div className="w-full h-[220px] sm:h-[300px] md:h-[420px] overflow-hidden">
         <img
-          src="/break.jpg" // replace with your image path
+          src="/break.jpg"
           alt="Breakfast Buffet"
           className="w-full h-full object-cover"
         />

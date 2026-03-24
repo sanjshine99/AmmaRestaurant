@@ -1,13 +1,30 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import BookingModal from "../../container/BookingModal";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openOrderMenu = () => {
+    if (!document.getElementById("glf-script")) {
+      const script = document.createElement("script");
+      script.src = "https://www.fbgcdn.com/embedder/js/ewm2.js";
+      script.async = true;
+      script.defer = true;
+      script.id = "glf-script";
+      document.body.appendChild(script);
+    }
+
+    const interval = setInterval(() => {
+      const btn = document.querySelector(".glf-button");
+      if (btn) {
+        btn.click();
+        clearInterval(interval);
+      }
+    }, 200);
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/95 text-white border-b border-gray-900">
@@ -40,10 +57,10 @@ const Navbar = () => {
         {/* Desktop Button */}
         <div className="hidden md:flex items-center gap-6">
           <button
-            onClick={() => setIsModalOpen(true)}
-            className="border border-[#86D276] px-6 py-2 text-[#86D276] font-semibold hover:bg-[#86D276] hover:text-black transition duration-300"
+            onClick={openOrderMenu}
+            className="border border-[#86D276] px-6 py-2 text-[#86D276] rounded-full font-semibold hover:bg-[#86D276] hover:text-black transition duration-300"
           >
-            Book Table
+            Order Online
           </button>
         </div>
 
@@ -72,23 +89,25 @@ const Navbar = () => {
           <Link to="/breakfast" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>BreakFast</Link>
           <HashLink smooth to="#contact" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Contact</HashLink>
 
+          {/* Corrected Mobile Order Button */}
           <button
-            onClick={() => {
-              setToggleMenu(false);
-              setIsModalOpen(true);
-            }}
-            className="border border-[#86D276] px-8 py-3 text-[#86D276] font-bold hover:bg-[#86D276] hover:text-black transition"
+            onClick={openOrderMenu}
+            className="border border-[#86D276] px-8 py-3 text-[#86D276] font-bold rounded-full hover:bg-[#86D276] hover:text-black transition"
           >
-            Book Table
+            Order Online
           </button>
         </div>
       )}
 
-      {/* Booking Modal */}
-      <BookingModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {/* HIDDEN TRIGGER */}
+      <span
+        className="glf-button"
+        data-glf-cuid="06a3cfd2-79fc-45d1-b7fe-207f0c298570"
+        data-glf-ruid="3d8577e8-91ec-43ce-87a4-86a045d849df"
+        style={{ display: "none" }}
+      >
+        Order
+      </span>
     </nav>
   );
 };

@@ -13,4 +13,6 @@ export const siteConfig = {
   Facebook: "https://web.facebook.com/ammakitchen.uk/",
   Instagram: "https://www.instagram.com/amma_kitchen_coventry/",
   YouTube: "https://www.youtube.com/channel/UCoW-kEyS6wXD8y0NfeRHDJA",
+  day: " 12:00 PM – 10:30 PM",
+  weekend : "10:00 AM – 10:30 PM"
 };

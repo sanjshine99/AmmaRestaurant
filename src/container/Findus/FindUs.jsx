@@ -84,8 +84,8 @@ export default function FindUs() {
                   className="space-y-1 border-l-2 pl-4"
                   style={{ borderColor: brandGreen }}
                 >
-                  <p className="text-gray-300 text-sm">Mon – Fri: 12:00 PM – 10:30 PM</p>
-                  <p className="text-white text-sm font-bold">Sat – Sun: 10:00 AM – 10:30 PM</p>
+                  <p className="text-gray-300 text-sm">Mon – Fri: {siteConfig.day}</p>
+                  <p className="text-white text-sm font-bold">Sat – Sun: {siteConfig.weekend}</p>
                 </div>
               </div>
             </div>

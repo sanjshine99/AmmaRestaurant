@@ -7,6 +7,27 @@ export default function HeroSection() {
   const brandGreen = "#86D276";
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const openOrderMenu = () => {
+    // Load script once
+    if (!document.getElementById("glf-script")) {
+      const script = document.createElement("script");
+      script.src = "https://www.fbgcdn.com/embedder/js/ewm2.js";
+      script.async = true;
+      script.defer = true;
+      script.id = "glf-script";
+      document.body.appendChild(script);
+    }
+
+    // Click widget every time
+    const interval = setInterval(() => {
+      const btn = document.querySelector(".glf-button");
+      if (btn) {
+        btn.click();
+        clearInterval(interval);
+      }
+    }, 200);
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
 
@@ -46,25 +67,26 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="flex flex-col sm:flex-row items-center gap-1 mt-0 w-full justify-center"
+          className="flex flex-col sm:flex-row items-center gap-4 mt-0 w-full justify-center"
         >
           <button
             onClick={() => setIsModalOpen(true)}
             style={{ backgroundColor: brandGreen }}
-            className="w-[200px] py-3 text-black text-sm font-bold uppercase tracking-widest rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg"
+            className="w-[200px] py-3 text-black text-sm font-bold uppercase cursor-pointer tracking-widest rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Book A Table
           </button>
 
-          <a
-            href={`tel:${siteConfig.phoneNumber}`}
-            className="w-[200px] py-3 border-2 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#86D276] transition-all duration-300 flex items-center justify-center group"
+          {/* CONNECTED TO openOrderMenu */}
+          <button
+            onClick={openOrderMenu}
+            className="w-[200px] py-3 border-2 text-sm font-bold uppercase tracking-widest rounded-full cursor-pointer transition-all duration-300 flex items-center justify-center group"
             style={{ borderColor: brandGreen }}
           >
-            <span className="text-[#86D276] group-hover:text-black">
-              Call Us
+            <span className="text-[#86D276] group-hover:scale-105 transition-colors duration-300">
+              Order Online
             </span>
-          </a>
+          </button>
         </motion.div>
 
         {/* INFO TEXT */}
@@ -79,7 +101,7 @@ export default function HeroSection() {
             style={{ color: brandGreen }}
             className="font-medium tracking-[0.2em]"
           >
-            Mon-Fri: 12PM-10:30PM | Sat-Sun: 10AM-10:30PM
+            Mon-Fri: {siteConfig.day} | Sat-Sun: {siteConfig.weekend}
           </p>
         </motion.div>
       </div>
@@ -89,6 +111,16 @@ export default function HeroSection() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+
+      {/* HIDDEN ORDER TRIGGER */}
+      <span
+        className="glf-button"
+        data-glf-cuid="06a3cfd2-79fc-45d1-b7fe-207f0c298570"
+        data-glf-ruid="3d8577e8-91ec-43ce-87a4-86a045d849df"
+        style={{ display: "none" }}
+      >
+        Order
+      </span>
     </section>
   );
 }

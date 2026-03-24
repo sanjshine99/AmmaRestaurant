@@ -7,13 +7,15 @@ const Event = () => {
     <section className="relative bg-black text-white min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20 overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Adjusted gap and items positioning for a cleaner 2-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          <div className="lg:col-span-5 space-y-8 text-center lg:text-left">
+          {/* LEFT SIDE: Text Content */}
+          <div className="space-y-8 text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide uppercase">
-              Weekend & Bank Holiday <br className="hidden lg:block" />
+              Weekend & Bank Holiday <br className="hidden md:block" />
               <span className="text-[#86D276]">Unlimited</span>{" "}
-              <br className="hidden lg:block" />
+              <br className="hidden md:block" />
               Breakfast
             </h1>
 
@@ -33,27 +35,20 @@ const Event = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-
-            <div className="aspect-4/5 overflow-hidden rounded-xl border border-white/10">
+          {/* RIGHT SIDE: Single Image (Fully Responsive) */}
+          <div className="w-full max-w-xl mx-auto lg:max-w-none">
+            <div className="aspect-5/5 overflow-hidden rounded-xl border border-white/10">
               <img
-                src="/fulls.png"
-                alt="Food preparation"
+                // Using /fulls.png from your original 'first' image slot
+                src="/contact.jpeg" 
+                alt="Amma Kitchen Food Preparation"
                 loading="lazy"
-                className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 hover:grayscale-0 hover:brightness-100"
+                // Maintaining the cool original hover effect
+                className="w-full h-full object-cover transition-all duration-700 hover:brightness-100"
               />
             </div>
-
-            <div className="hidden md:block aspect-4/5 overflow-hidden translate-y-12 lg:translate-y-20 rounded-xl border border-white/10">
-              <img
-                src="/full.png"
-                alt="Breakfast dishes"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
           </div>
+
         </div>
       </div>
     </section>

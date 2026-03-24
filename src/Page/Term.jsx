@@ -1,5 +1,7 @@
 // src/pages/TermsConditions.js
 
+import { siteConfig } from "../../SiteConfig";
+
 
 const TermsConditions = () => {
   return (
@@ -78,8 +80,7 @@ const TermsConditions = () => {
                       </p>
                       <div className="text-white">
                          <p><strong>Amma Kitchen Coventry</strong></p>
-                        {/* <p>Email: <a href="mailto:info@ammakitchen.coventry" className="text-[#27AE60] hover:underline">info@ammakitchen.coventry</a></p> */}
-                        <p>Phone: +44 24 7509 0098</p>
+                        <p>Phone: {siteConfig.displayPhone}</p>
                         <p>Address: 477 Beake Ave, Coventry CV6 2HT, United Kingdom, United Kingdom</p>
                       </div>
                   </section>

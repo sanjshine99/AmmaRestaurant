@@ -2,8 +2,6 @@
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { siteConfig } from "../../../SiteConfig";
-// If you are using react-router-dom, uncomment the line below:
-// import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -42,7 +40,7 @@ export default function Footer() {
               href={`tel:${siteConfig.phoneNumber}`}
               className="block mt-2 text-sm opacity-90 hover:opacity-100 hover:underline transition"
             >
-              +44 24 7509 0098
+              {siteConfig.displayPhone}
             </a>
           </div>
 
@@ -103,11 +101,11 @@ export default function Footer() {
             <h3 className="text-2xl  mb-4">Opening Hours</h3>
             <p className="text-sm font-semibold opacity-90">Mon – Fri</p>
             <p className="mb-3 text-sm opacity-90">
-              12:00 PM – 10:30 PM
+              {siteConfig.day}
             </p>
             <p className="text-sm font-semibold opacity-90">Sat – Sun</p>
             <p className="text-sm opacity-90">
-              10:00 AM – 10:30 PM
+              {siteConfig.weekend}
             </p>
           </div>
         </div>

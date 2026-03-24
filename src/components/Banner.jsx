@@ -16,7 +16,7 @@ export default function Banner() {
             <div
                 className="absolute inset-0 z-0  pointer-events-none"
                 style={{
-                    backgroundImage: "url('/bg.png')", // Public folder path
+                    backgroundImage: "url('/bg.png')",
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
@@ -35,17 +35,10 @@ export default function Banner() {
                         {/* Hero Headline */}
                         <h1 className="mb-8 leading-none">
                             <span className="block text-[#f0ebe0] font-light text-5xl sm:text-6xl lg:text-[3.8rem] leading-tight">
-                                Celebrate
-                            </span>
-                            <span className="block text-[#f0ebe0] font-light text-5xl sm:text-6xl lg:text-[3.8rem] leading-tight">
-                                Her With{" "}
-                                <em className="text-[#86D276]  italic">The</em>
-                            </span>
+                                Every Day 
+                            </span>          
                             <span className="block text-[#86D276] italic text-5xl sm:text-6xl lg:text-[3.8rem] leading-tight">
-                                Flavours
-                            </span>
-                            <span className="block text-[#f0ebe0] font-light text-5xl sm:text-6xl lg:text-[3.8rem] leading-tight">
-                                She Deserves
+                                Deserves A Feast
                             </span>
                         </h1>
 
@@ -54,7 +47,7 @@ export default function Banner() {
                             <p
                                 className="text-[#86D276] italic text-base sm:text-lg leading-relaxed"
                             >
-                                Made with love, just like hers — join us for an authentic South Indian feast this Mother's Day.
+                                Come savour an authentic South Indian meal made with love, any day of the week.
                             </p>
                         </div>
                     </div>
