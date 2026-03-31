@@ -11,6 +11,7 @@ import GDPRBanner from "./container/GDPRBanner";
 import BreakFastPage from "./Page/BreakFastPage";
 import ScrollToHash from "./components/ScrollToHash";
 import ScrollToTop from "./components/ScrollToTop";
+import BookingSection from "./components/Reservation";
 
 const App = () => {
   // State to manage selected category for menu navigation
@@ -40,6 +41,10 @@ const App = () => {
         <Route
           path="/breakfast"
           element={<BreakFastPage />}
+        />
+        <Route
+          path="/reservation"
+          element={<BookingSection />}
         />
         <Route
           path="/privacy-policy"
