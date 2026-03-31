@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <HashLink smooth to="/#" className="flex items-center">
-          <img src="/logo.png" alt="logo" className="h-15 w-auto" loading="lazy"/>
+          <img src="/logo.png" alt="logo" className="h-15 w-auto" loading="lazy" />
         </HashLink>
 
         {/* Desktop Links */}
@@ -51,6 +51,9 @@ const Navbar = () => {
           </li>
           <li>
             <HashLink smooth to="/#contact" className="hover:text-[#86D276] transition">Contact</HashLink>
+          </li>
+          <li>
+            <HashLink smooth to="/reservation" className="hover:text-[#86D276] transition">Reservation</HashLink>
           </li>
         </ul>
 
@@ -88,7 +91,7 @@ const Navbar = () => {
           <HashLink smooth to="/#menu" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Menu</HashLink>
           <Link to="/breakfast" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>BreakFast</Link>
           <HashLink smooth to="/#contact" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Contact</HashLink>
-
+          <HashLink smooth to="/reservation" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Reservation</HashLink>
           {/* Corrected Mobile Order Button */}
           <button
             onClick={openOrderMenu}
