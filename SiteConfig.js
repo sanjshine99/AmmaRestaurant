@@ -1,5 +1,3 @@
-import { address, em } from "framer-motion/client";
-
 export const siteConfig = {
   phoneNumber: "+442475090098",
   whatsappNumber: "447897550930",

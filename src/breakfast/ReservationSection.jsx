@@ -125,19 +125,19 @@ export default function Contact() {
 
           <div className="text-center mb-10">
             <h3 className="text-3xl md:text-4xl font-semibold">
-              Secure Your Table
+              Secure Your Table 
             </h3>
           </div>
 
           <form onSubmit={handleWhatsAppBooking} className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <CounterField label="Adults" field="adults" min={1} />
-            <CounterField label="Children" field="children" min={0} />
+            <CounterField label="Adults *" field="adults" min={1} />
+            <CounterField label="Children *" field="children" min={0} />
 
             <div className="md:col-span-2 flex items-center gap-2 bg-[#86D276]/5 border border-[#86D276]/20 rounded-md px-4 py-3">
               <Users size={14} className="text-[#86D276] shrink-0" />
               <span className="text-xs text-gray-300">
-                Total guests:{" "}
+                Total guests :{" "}
                 <span className="text-[#86D276] font-semibold">
                   {formData.adults + formData.children}
                 </span>
@@ -152,7 +152,7 @@ export default function Contact() {
 
             <div className="relative border border-white/20 rounded-md focus-within:ring-2 focus-within:ring-[#86D276]">
               <label className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 px-2 pt-1">
-                Select Date
+                Select Date *
               </label>
               <input
                 type="date"
@@ -166,7 +166,7 @@ export default function Contact() {
 
             <div className="relative border border-white/20 rounded-md focus-within:ring-2 focus-within:ring-[#86D276]">
               <label className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 px-2 pt-1">
-                Select Time
+                Select Time *
               </label>
               <input
                 type="time"
@@ -180,7 +180,7 @@ export default function Contact() {
 
             <div className="relative border border-white/20 rounded-md md:col-span-2">
               <label className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 px-2 pt-1">
-                Preferred Breakfast
+                Preferred Breakfast *
               </label>
               <input
                 type="text"

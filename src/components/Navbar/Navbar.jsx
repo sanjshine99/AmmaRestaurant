@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -6,8 +6,10 @@ import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const intervalRef = useRef(null); 
 
-  const openOrderMenu = () => {
+  // 1. Load the script once when the component mounts
+  useEffect(() => {
     if (!document.getElementById("glf-script")) {
       const script = document.createElement("script");
       script.src = "https://www.fbgcdn.com/embedder/js/ewm2.js";
@@ -17,19 +19,33 @@ const Navbar = () => {
       document.body.appendChild(script);
     }
 
-    const interval = setInterval(() => {
+    // Cleanup: Clear any active interval if the component unmounts
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const openOrderMenu = () => {
+    // Prevent multiple intervals from running at the same time
+    if (intervalRef.current) clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
       const btn = document.querySelector(".glf-button");
       if (btn) {
         btn.click();
-        clearInterval(interval);
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
       }
     }, 200);
+    
+    // Close mobile menu if it was open
+    setToggleMenu(false);
   };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/95 text-white border-b border-gray-900">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-
+        
         {/* Logo */}
         <HashLink smooth to="/#" className="flex items-center">
           <img src="/logo.png" alt="logo" className="h-15 w-auto" loading="lazy" />
@@ -37,24 +53,12 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-          <li>
-            <HashLink smooth to="/#" className="hover:text-[#86D276] transition">Home</HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="/#about" className="hover:text-[#86D276] transition">About</HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="/#menu" className="hover:text-[#86D276] transition">Menu</HashLink>
-          </li>
-          <li>
-            <Link to="/breakfast" className="hover:text-[#86D276] transition">BreakFast</Link>
-          </li>
-          <li>
-            <HashLink smooth to="/#contact" className="hover:text-[#86D276] transition">Contact</HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="/reservation" className="hover:text-[#86D276] transition">Reservation</HashLink>
-          </li>
+          <li><HashLink smooth to="/#" className="hover:text-[#86D276] transition">Home</HashLink></li>
+          <li><HashLink smooth to="/#about" className="hover:text-[#86D276] transition">About</HashLink></li>
+          <li><HashLink smooth to="/#menu" className="hover:text-[#86D276] transition">Menu</HashLink></li>
+          <li><Link to="/breakfast" className="hover:text-[#86D276] transition">Breakfast</Link></li>
+          <li><HashLink smooth to="/#contact" className="hover:text-[#86D276] transition">Contact</HashLink></li>
+          <li><HashLink smooth to="/reservation" className="hover:text-[#86D276] transition">Reservation</HashLink></li>
         </ul>
 
         {/* Desktop Button */}
@@ -92,7 +96,7 @@ const Navbar = () => {
           <Link to="/breakfast" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>BreakFast</Link>
           <HashLink smooth to="/#contact" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Contact</HashLink>
           <HashLink smooth to="/reservation" className="hover:text-[#86D276]" onClick={() => setToggleMenu(false)}>Reservation</HashLink>
-          {/* Corrected Mobile Order Button */}
+          
           <button
             onClick={openOrderMenu}
             className="border border-[#86D276] px-8 py-3 text-[#86D276] font-bold rounded-full hover:bg-[#86D276] hover:text-black transition"

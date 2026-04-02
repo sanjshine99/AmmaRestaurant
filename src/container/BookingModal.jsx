@@ -86,7 +86,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
               {/* Name */}
               <div className="relative">
-                <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Full Name</label>
+                <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Full Name *</label>
                 <input
                   type="text"
                   name="name"
@@ -101,7 +101,7 @@ const BookingModal = ({ isOpen, onClose }) => {
               {/* Date & Time */}
               <div className="flex gap-3">
                 <div className="flex-1">
-                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Date</label>
+                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Date *</label>
                   <input
                     type="date"
                     name="date"
@@ -112,7 +112,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                   />
                 </div>
                 <div className="flex-1">
-                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Time</label>
+                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Time *</label>
                   <input
                     type="time"
                     name="time"
@@ -128,7 +128,7 @@ const BookingModal = ({ isOpen, onClose }) => {
               <div className="flex gap-3">
                 {/* Adults */}
                 <div className="flex-1">
-                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Adults</label>
+                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Adults *</label>
                   <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-3 py-2.5">
                     <button
                       type="button"
@@ -150,7 +150,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
                 {/* Children */}
                 <div className="flex-1">
-                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Children</label>
+                  <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-1.5 ml-1">Children *</label>
                   <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-3 py-2.5">
                     <button
                       type="button"

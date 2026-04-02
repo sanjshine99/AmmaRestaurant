@@ -3,13 +3,22 @@ import { Link } from "react-router-dom";
 
 export default function GDPRConsent() {
   const [visible, setVisible] = useState(false);
-  const [accepted, setAccepted] = useState(null);
+  const [accepted, setAccepted] = useState(null); // just use null for JS
   const [showIcon, setShowIcon] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("gdprConsent");
-    if (consent === "true" || consent === "false") {
-      setAccepted(consent === "true");
+    // Safely parse boolean from localStorage
+    const stored = localStorage.getItem("gdprConsent");
+    let consent = null;
+
+    try {
+      consent = stored !== null ? JSON.parse(stored) : null;
+    } catch (err) {
+      consent = null;
+    }
+
+    if (consent === true || consent === false) {
+      setAccepted(consent);
       setShowIcon(true);
     } else {
       setVisible(true);
@@ -17,14 +26,14 @@ export default function GDPRConsent() {
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("gdprConsent", "true");
+    localStorage.setItem("gdprConsent", JSON.stringify(true));
     setAccepted(true);
     setVisible(false);
     setShowIcon(true);
   };
 
   const handleReject = () => {
-    localStorage.setItem("gdprConsent", "false");
+    localStorage.setItem("gdprConsent", JSON.stringify(false));
     setAccepted(false);
     setVisible(false);
     setShowIcon(true);
@@ -46,7 +55,6 @@ export default function GDPRConsent() {
             We use cookies to improve your experience.
           </p>
           
-          {/* FIXED PRIVACY LINK COLOR */}
           <p className="mb-4">
             <Link
               to="/privacy-policy"
@@ -64,7 +72,6 @@ export default function GDPRConsent() {
               Reject
             </button>
             
-            {/* FIXED ACCEPT BUTTON COLOR */}
             <button
               onClick={handleAccept}
               className="bg-[#86D276] text-gray-900 font-bold px-4 py-2 rounded text-sm hover:brightness-110 transition"
@@ -75,7 +82,7 @@ export default function GDPRConsent() {
         </div>
       )}
 
-      {/* Floating Icon FIXED COLOR */}
+      {/* Floating Icon */}
       {showIcon && !visible && (
         <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40">
           <button

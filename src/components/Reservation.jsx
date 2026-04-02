@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { siteConfig } from "../../SiteConfig";
 
 const BookingSection = () => {
-    const [formData, setFormData] = useState({
+    // 1. Define the initial state so we can reuse it for resetting
+    const initialFormState = {
         name: "",
         date: "",
         time: "",
-        adults: 1, // Default to 1
+        adults: 1,
         children: 0,
         message: "",
-    });
+    };
+
+    const [formData, setFormData] = useState(initialFormState);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -36,7 +39,12 @@ const BookingSection = () => {
             `Children: ${formData.children}\n` +
             `Notes: ${formData.message || "None"}`
         );
+
+        // Open WhatsApp in a new tab
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+
+        // 2. Reset the form data after sending
+        setFormData(initialFormState);
     };
 
     return (
@@ -45,13 +53,13 @@ const BookingSection = () => {
             <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-[#86D276] to-transparent opacity-30" />
 
             <style>{`
-        input[type="date"], input[type="time"] { color-scheme: dark; }
-        input[type="date"]::-webkit-calendar-picker-indicator,
-        input[type="time"]::-webkit-calendar-picker-indicator {
-          filter: invert(48%) sepia(79%) saturate(400%) hue-rotate(65deg) brightness(118%) contrast(119%);
-          cursor: pointer;
-        }
-      `}</style>
+                input[type="date"], input[type="time"] { color-scheme: dark; }
+                input[type="date"]::-webkit-calendar-picker-indicator,
+                input[type="time"]::-webkit-calendar-picker-indicator {
+                  filter: invert(48%) sepia(79%) saturate(400%) hue-rotate(65deg) brightness(118%) contrast(119%);
+                  cursor: pointer;
+                }
+            `}</style>
 
             <div className="max-w-6xl mx-auto px-4 relative mt-20 z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -91,7 +99,7 @@ const BookingSection = () => {
 
                             {/* Name */}
                             <div>
-                                <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Full Name</label>
+                                <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Full Name *</label>
                                 <input
                                     type="text"
                                     name="name"
@@ -106,7 +114,7 @@ const BookingSection = () => {
                             {/* Date & Time */}
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Date</label>
+                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Date *</label>
                                     <input
                                         type="date"
                                         name="date"
@@ -117,7 +125,7 @@ const BookingSection = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Time</label>
+                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Time *</label>
                                     <input
                                         type="time"
                                         name="time"
@@ -132,7 +140,7 @@ const BookingSection = () => {
                             {/* Guests */}
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Adults</label>
+                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Adults *</label>
                                     <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
                                         <button type="button" onClick={() => decrement("adults")} className="text-[#86D276] hover:scale-125 transition text-xl">−</button>
                                         <span className="text-white font-bold">{formData.adults}</span>
@@ -140,7 +148,7 @@ const BookingSection = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Children</label>
+                                    <label className="block text-[#86D276]/70 text-[10px] tracking-widest uppercase mb-2 ml-1">Children *</label>
                                     <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
                                         <button type="button" onClick={() => decrement("children")} className="text-[#86D276] hover:scale-125 transition text-xl">−</button>
                                         <span className="text-white font-bold">{formData.children}</span>

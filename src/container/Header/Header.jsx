@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import BookingModal from "../../container/BookingModal";
 import { siteConfig } from "../../../SiteConfig";
 
 export default function HeroSection() {
   const brandGreen = "#86D276";
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const intervalRef = useRef(null); // Ref to hold the interval ID
 
-  const openOrderMenu = () => {
-    // Load script once
+  // 1. Manage Script Loading and Cleanup
+  useEffect(() => {
     if (!document.getElementById("glf-script")) {
       const script = document.createElement("script");
       script.src = "https://www.fbgcdn.com/embedder/js/ewm2.js";
@@ -18,12 +19,21 @@ export default function HeroSection() {
       document.body.appendChild(script);
     }
 
-    // Click widget every time
-    const interval = setInterval(() => {
+    // Cleanup: Clear interval if component unmounts
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const openOrderMenu = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
       const btn = document.querySelector(".glf-button");
       if (btn) {
         btn.click();
-        clearInterval(interval);
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
       }
     }, 200);
   };
@@ -36,6 +46,7 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover z-0"
         src="/amma_kitchen.mp4"
         autoPlay
+        preload="metadata"
         loop
         muted
         playsInline
