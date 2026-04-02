@@ -14,11 +14,11 @@ const Home = ({ onCategoryClick, selectedCategory }) => (
     <Banner />
     <AboutSection />
     <MenuCategories onCategoryClick={onCategoryClick} />
+    <Award />
     <NewMenu />
     <ReviewsSection />
     <Chef />
     <Intro />
-    <Award />
     <Laurels />
     <Gallery />
     <FindUs />
