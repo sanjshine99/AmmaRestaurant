@@ -11,7 +11,7 @@ const Event = () => {
           {/* LEFT SIDE: Text Content */}
           <div className="space-y-8 text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide uppercase">
-              Weekend & Bank Holiday <br className="hidden md:block" />
+              Weekend <br className="hidden md:block" />
               <span className="text-[#86D276]">Unlimited</span>{" "}
               <br className="hidden md:block" />
               Breakfast

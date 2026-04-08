@@ -99,7 +99,7 @@ const MenuSection = () => {
 
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-black text-[#86D276] uppercase tracking-tight mb-4">
-            Start Your Day Right to "Unlimited Breakfast on Weekend & Bank Holidays"
+            Start Your Day Right to "Unlimited Breakfast on Weekend"
           </h2>
           <h3 className="text-xl md:text-2xl font-bold text-gray-300 italic mb-2">
             Feast Your Senses with Our Unlimited Breakfast to

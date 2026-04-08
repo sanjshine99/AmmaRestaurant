@@ -33,7 +33,7 @@ const AboutSection = () => {
                                 About Unlimited Breakfast Days
                             </h3>
                             <p className="text-lg text-gray-300 max-w-sm font-light leading-relaxed">
-                                At Amma Kitchen, we bring you the authentic taste of South Indian and Sri Lankan cuisine, served with warmth and care. Our Weekend & Bank Holiday Unlimited Breakfast is designed for food lovers who enjoy variety, freshness, and real traditional flavours — from soft idly and crispy dosa to poori, pongal, vadai, upma, and masala tea. Every dish is prepared using quality ingredients and cooked with passion, so you can enjoy a satisfying breakfast without long waiting times. Whether you dine in with family or plan ahead by booking early, we’re here to give you a delicious and memorable start to your day.
+                                At Amma Kitchen, we bring you the authentic taste of South Indian and Sri Lankan cuisine, served with warmth and care. Our Weekend Unlimited Breakfast is designed for food lovers who enjoy variety, freshness, and real traditional flavours — from soft idly and crispy dosa to poori, pongal, vadai, upma, and masala tea. Every dish is prepared using quality ingredients and cooked with passion, so you can enjoy a satisfying breakfast without long waiting times. Whether you dine in with family or plan ahead by booking early, we’re here to give you a delicious and memorable start to your day.
                             </p>
                         </motion.div>
 
