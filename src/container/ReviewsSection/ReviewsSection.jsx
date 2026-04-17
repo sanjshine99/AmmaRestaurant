@@ -101,7 +101,7 @@ export default function ReviewsSection() {
 
 function ReviewPill({ id, name, stars, text, brandGreen }) {
   return (
-    <div className="shrink-0 w-[280px] sm:w-[420px] min-h-[150px] rounded-3xl sm:rounded-[40px] bg-linear-to-br from-neutral-900/80 to-black/90 backdrop-blur-md px-6 py-6 sm:px-10 sm:py-10 border border-white/10 shadow-2xl flex flex-col justify-between">
+    <div className="shrink-0 w-70 sm:w-105 min-h-38 rounded-3xl sm:rounded-[40px] bg-linear-to-br from-neutral-900/80 to-black/90 backdrop-blur-md px-6 py-6 sm:px-10 sm:py-10 border border-white/10 shadow-2xl flex flex-col justify-between">
       <div className="flex items-center justify-between mb-4">
         <h4
           className="text-lg sm:text-2xl font-bold incline-text tracking-wide"
