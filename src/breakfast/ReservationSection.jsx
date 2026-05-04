@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { MapPin, Phone, Plus, Minus, Users } from "lucide-react";
 
 const siteConfig = {
-  whatsappNumber: "1234567890",
-  address: "123 Amma Kitchen St, Food City",
-  displayPhone: "+1 234 567 890"
+  whatsappNumber: "447897550930",
+  address: "477 Beake Ave, Coventry CV6 2HT, United Kingdom",
+  displayPhone: "+44 24 7509 0098"
 };
 
 export default function Contact() {
