@@ -38,7 +38,7 @@ const Event = () => {
             <div className="aspect-5/5 overflow-hidden rounded-xl border border-white/10">
               <img
                 // Using /fulls.png from your original 'first' image slot
-                src="/contact.jpeg" 
+                src="/week.jpeg" 
                 alt="Amma Kitchen Food Preparation"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-700 hover:brightness-100"
