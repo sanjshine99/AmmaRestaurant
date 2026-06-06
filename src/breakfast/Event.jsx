@@ -37,7 +37,7 @@ const Event = () => {
           <div className="w-full h-full sm:w-120 sm:h-160 max-w-xl mx-auto lg:max-w-none">
             <div className="overflow-hidden rounded-xl border border-white/10">
               <img
-                src="/spl.jpeg" 
+                src="/week.jpeg" 
                 alt="Amma Kitchen Food Preparation"
                 loading="lazy"
                 className="w-full h-full object-cover transition-all duration-700 hover:brightness-100"

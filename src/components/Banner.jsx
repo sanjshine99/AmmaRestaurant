@@ -57,10 +57,10 @@ export default function Banner() {
                 <div className="relative w-full lg:w-[48%] overflow-hidden p-4">
                     <div className="relative w-full h-120 mt-10 my-auto overflow-hidden rounded-2xl">
                         <img
-                            src="/Paneer Dosa.jpeg"
+                            src="/spl.jpeg"
                             alt="South Indian feast"
                             loading="lazy"
-                            className="absolute inset-0 w-full h-full  object-cover"
+                            className="absolute inset-0 w-full h-full object-contain object-center"
                         />
 
                         {/* Left blend — desktop */}
